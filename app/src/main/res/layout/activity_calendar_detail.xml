@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".calendarDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/calendarDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxDate="31/12/2030"
+            android:minDate="01/01/2019" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/calendarDetail_ivInfo"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:foregroundTint="#158801"
+        android:foregroundTintMode="screen"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/catetwo" />
+
+    <TextView
+        android:id="@+id/calendarDetail_tInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="HELLO WORLD"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/calendarDetail_tDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="July, 10 2019"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/calendarDetail_bTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/lightestgreen"
+            android:text="17:00"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/calendarDetail_bEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/lightestgreen"
+            android:text="EDIT"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/calendarDetail_tDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:text="@string/lorem_ipsum"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
