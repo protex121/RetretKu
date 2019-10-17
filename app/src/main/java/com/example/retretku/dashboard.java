@@ -3,6 +3,7 @@ package com.example.retretku;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -16,4 +17,9 @@ public class dashboard extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_dashboard);
     }
+
+    public void logout(View v){
+        finish();
+    }
+
 }

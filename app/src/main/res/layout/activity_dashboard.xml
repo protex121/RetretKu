@@ -46,6 +46,7 @@
                 android:layout_width="45sp"
                 android:layout_height="45sp"
                 android:layout_marginTop="24dp"
+                android:onClick="logout"
                 android:src="@drawable/ic_arrow_left"
                 app:layout_constraintStart_toStartOf="@+id/txtjudul"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="30dp"
-            android:text="Feed"
+            android:text="Info"
             android:textAlignment="center"
             android:textColor="#3E4993"
             android:textSize="18sp" />
@@ -109,22 +110,22 @@
                 android:paddingRight="24dp">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="110dp"
-                    android:layout_marginRight="16dp"
-                    android:src="@drawable/cateone" />
+                    android:layout_width="238dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="0dp"
+                    android:src="@drawable/trans1" />
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="110dp"
-                    android:layout_marginRight="16dp"
-                    android:src="@drawable/catetwo" />
+                    android:layout_width="238dp"
+                    android:layout_height="wrap_content"
+
+                    android:src="@drawable/trans2" />
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="110dp"
-                    android:layout_marginRight="16dp"
-                    android:src="@drawable/catethree" />
+                    android:layout_width="238dp"
+                    android:layout_height="wrap_content"
+
+                    android:src="@drawable/trans3" />
 
             </LinearLayout>
 
@@ -136,7 +137,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="Popular Place"
+            android:text="Menu"
             android:textColor="#3E4993"
             android:textSize="18sp" />
 
@@ -175,7 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Bukit Doa Immanuel"
+                        android:text="Menu 1"
                         android:textColor="#3E4993"
                         android:textSize="18sp" />
 
@@ -276,7 +277,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Rumah Retret Sawiran"
+                        android:text="Menu 2"
                         android:textColor="#3E4993"
                         android:textSize="18sp" />
 
@@ -364,7 +365,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Roemah YWI"
+                        android:text="Menu 3"
                         android:textColor="#3E4993"
                         android:textSize="18sp" />
 
@@ -446,7 +447,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Roemah YWI"
+                        android:text="Menu 4"
                         android:textColor="#3E4993"
                         android:textSize="18sp" />
 
