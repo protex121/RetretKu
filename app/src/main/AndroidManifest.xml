@@ -4,11 +4,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_retretku"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_retretku_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".detail_tempat_retret"></activity>
+        <activity android:name=".detail_pemesanan" />
+        <activity android:name=".calendarDetail" />
+        <activity android:name=".calendar" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@layout/activity_home" />
