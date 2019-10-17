@@ -34,7 +34,7 @@ public class login extends AppCompatActivity {
     public void klik(View v){
 
         if(txtemail.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-            Intent i = new Intent(this,dashboard.class);
+            Intent i = new Intent(this,admin.class);
             startActivity(i);
         }
         else{

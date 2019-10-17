@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".admin"></activity>
+        <activity android:name=".detail_pemesanan" />
+        <activity android:name=".detail_retret" />
+        <activity android:name=".detail_katering" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@layout/activity_home" />
