@@ -1,27 +1,34 @@
 package com.example.retretku;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 public class calendar extends AppCompatActivity {
-    RecyclerView rv;
+
+    CalendarView cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        getSupportActionBar().hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_calendar);
 
-        rv.findViewById(R.id.rvCalendarUpcoming);
-    }
+        cv = findViewById(R.id.calendarView);
+        cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inf = getMenuInflater();
-        inf.inflate(R.menu.calendar_menu, menu);
-        return true;
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Intent i = new Intent(getApplicationContext(), calendarDetail.class);
+                startActivity(i);
+            }
+        });
     }
 }
