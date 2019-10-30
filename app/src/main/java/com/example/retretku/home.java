@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -91,5 +93,11 @@ public class home extends AppCompatActivity {
         itemThree.startAnimation(fromtopbottomthree);
 
     }
+
+    public void pesan(View v){
+        Intent i = new Intent(getApplicationContext(), detail_tempat_retret.class);
+        startActivity(i);
+    }
+
 
 }
