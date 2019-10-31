@@ -12,7 +12,12 @@
         <activity android:name=".detail_tempat_retret"></activity>
         <activity android:name=".detail_pemesanan" />
         <activity android:name=".calendarDetail" />
-        <activity android:name=".calendar" />
+        <activity android:name=".calendar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.actions"
@@ -21,13 +26,7 @@
         <activity android:name=".home" />
         <activity android:name=".dashboard" />
         <activity android:name=".login" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

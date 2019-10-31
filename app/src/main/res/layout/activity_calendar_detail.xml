@@ -1,99 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/baseConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".calendarDetail">
+    tools:context=".calendarDetail" >
+
+    <CalendarView
+        android:id="@+id/calendar_ca"
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical">
-
-        <CalendarView
-            android:id="@+id/calendarDetailView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxDate="31/12/2030"
-            android:minDate="01/01/2019" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/calendarDetail_ivInfo"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:foregroundTint="#158801"
-        android:foregroundTintMode="screen"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/catetwo" />
-
-    <TextView
-        android:id="@+id/calendarDetail_tInfo"
+        android:id="@+id/layoutInfo_cd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:text="HELLO WORLD"
-        android:textSize="24sp" />
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_ca">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="5dp">
-
-        <TextView
-            android:id="@+id/calendarDetail_tDate"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/ivInfo_cd"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="July, 10 2019"
-            android:textColor="@color/colorPrimary" />
-
-        <Button
-            android:id="@+id/calendarDetail_bTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:backgroundTint="#FF0031"
-            android:text="17:00"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/calendarDetail_bEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:backgroundTint="#2E2E2E"
-            android:text="EDIT"
-            android:textColor="#FFFFFF" />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/cateone" />
     </LinearLayout>
 
-    <ScrollView
+    <TextView
+        android:id="@+id/tInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Makan bareng temen"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutInfo_cd"
+        app:layout_constraintEnd_toEndOf="@id/layoutInfo_cd"
+        app:layout_constraintStart_toStartOf="@+id/layoutInfo_cd"
+        app:layout_constraintTop_toTopOf="@+id/layoutInfo_cd" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutEdit_cd"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutInfo_cd">
+
+        <TextView
+            android:id="@+id/tDate_cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:text="10 October 2019"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bJam_cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="18:00"
+            app:layout_constraintEnd_toStartOf="@+id/bEdit_cd"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bEdit_cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="EDIT"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollContent_cd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEdit_cd">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp">
 
             <TextView
-                android:id="@+id/calendarDetail_tDetail"
+                android:id="@+id/tContent_cd"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="15dp"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
-                android:text="@string/lorem_ipsum"
-                android:textAlignment="textStart" />
+                android:layout_height="wrap_content"
+                android:text="@string/lorem_ipsum" />
         </LinearLayout>
     </ScrollView>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
