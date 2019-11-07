@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CalendarView;
-import android.widget.Toast;
 
 public class calendar extends AppCompatActivity {
 
@@ -21,7 +20,7 @@ public class calendar extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_calendar);
 
-        cv = findViewById(R.id.calendarView);
+        cv = findViewById(R.id.calendar_ca);
         cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
             @Override
