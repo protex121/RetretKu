@@ -14,11 +14,6 @@
         <activity android:name=".detail_pemesanan" />
         <activity android:name=".calendarDetail" />
         <activity android:name=".calendar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -27,7 +22,13 @@
 
         <activity android:name=".home" />
         <activity android:name=".dashboard" />
-        <activity android:name=".login" />
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity" />
     </application>
 
