@@ -4,51 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detail_tempat_retret">
+    tools:context=".DetailTempatRetretActivity">
 
-    <Button
-        android:id="@+id/btnBook"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:background="@drawable/gradient_button"
-        android:onClick="book"
-        android:text="Book"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="232dp"
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:backgroundTint="#155E04"
+            android:text="      Back"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF" />
 
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="@+id/btnBack"
-        app:layout_constraintStart_toStartOf="@+id/btnBack"
-        app:layout_constraintTop_toBottomOf="@+id/btnBack"
-        app:srcCompat="@drawable/cateone" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="232dp"
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="332dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:srcCompat="@drawable/group488" />
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/cateone" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:backgroundTint="#155E04"
-        android:text="      Back"
-        android:textAlignment="viewStart"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="332dp"
+            app:srcCompat="@drawable/group488" />
+
+        <Button
+            android:id="@+id/btnBook"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gradient_button"
+            android:onClick="book"
+            android:text="Book"
+            android:textColor="#FFFFFF" />
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "632058992134",
+    "firebase_url": "https://retretku.firebaseio.com",
+    "project_id": "retretku",
+    "storage_bucket": "retretku.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632058992134:android:10a4cca86ac455da81d587",
+        "android_client_info": {
+          "package_name": "com.example.retretku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632058992134-8bljla771mbhg36jktdije8lmm1g3iv0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.retretku",
+            "certificate_hash": "7b85aeae02ad58ecc9901aa1ae6c503133c36a3d"
+          }
+        },
+        {
+          "client_id": "632058992134-iqrrujhn8edm1vkpc2l8efm98vttqu9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB2kEGlSZEDXMs1Q1sjpoTuBdEG2IvGbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632058992134-iqrrujhn8edm1vkpc2l8efm98vttqu9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

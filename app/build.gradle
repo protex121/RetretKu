@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -31,5 +32,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-runtime:2.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
-
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
 }

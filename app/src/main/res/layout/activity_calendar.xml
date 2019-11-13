@@ -1,125 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/baseConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".calendar">
+    tools:context=".CalendarActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/bg_calendar"
-        android:orientation="vertical">
-
-        <CalendarView
-            android:id="@+id/calendarView"
-            style="@android:style/Widget.Material.CalendarView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:maxDate="31/12/2030"
-            android:minDate="01/01/2019"
-            android:scrollbars="none" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
+    <CalendarView
+        android:id="@+id/calendar_ca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/lightestgray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_ca" />
+
+    <TextView
+        android:id="@+id/tUpcoming_ca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp"
         android:text="Upcoming"
-        android:textColor="#BFBFBF"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
-        android:typeface="sans" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar_ca" />
 
     <ScrollView
+        android:id="@+id/scUpcoming_ca"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:fadeScrollbars="true">
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tUpcoming_ca">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvCalendarUpcoming"
+                android:id="@+id/rvUpcoming_ca"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@android:layout/simple_list_item_1" />
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp" />
         </LinearLayout>
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tPhotos_ca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:paddingLeft="15dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         android:text="Photos"
-        android:textColor="#BFBFBF"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
-        android:typeface="sans" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scUpcoming_ca" />
 
     <HorizontalScrollView
+        android:id="@+id/scroll_ca"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tPhotos_ca">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="left|center_vertical"
-            android:orientation="horizontal"
-            android:paddingLeft="15dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginRight="15dp"
+                android:id="@+id/imageView9"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="12dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/catethree"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/itempictwo" />
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginRight="15dp"
+                android:id="@+id/imageView8"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="12dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/bug"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/catetwo" />
 
             <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginRight="15dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/catetwo"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="12dp"
+                app:srcCompat="@drawable/catethree" />
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginRight="15dp"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="12dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/itempictwo"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/bitcoin" />
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginRight="15dp"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="12dp"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/bug" />
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

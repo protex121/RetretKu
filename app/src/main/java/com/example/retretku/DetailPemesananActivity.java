@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class calendarDetail extends AppCompatActivity {
+public class DetailPemesananActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar_detail);
+        setContentView(R.layout.activity_detail_pemesanan);
     }
 }
