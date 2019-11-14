@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_retretku_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomePengelola"></activity>
-        <activity android:name=".detail_tempat_retret" />
-        <activity android:name=".detail_pemesanan" />
-        <activity android:name=".calendarDetail" />
-        <activity android:name=".calendar">
+        <activity android:name=".HomePengelola">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".detail_tempat_retret" />
+        <activity android:name=".detail_pemesanan" />
+        <activity android:name=".calendarDetail" />
+        <activity android:name=".calendar"></activity>
 
         <meta-data
             android:name="com.google.android.actions"

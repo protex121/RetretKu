@@ -35,20 +35,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBar_HomePengelola">
 
-        <ImageView
-            android:id="@+id/bAddRumahRetret_HomePengelola"
+        <FrameLayout
+            android:id="@+id/ubahProfile_HomePengelola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:layout_weight="1">
 
-        <ImageView
-            android:id="@+id/bEditRumahRetret_HomePengelola"
+            <ImageView
+                android:id="@+id/ivUbahProfile_HomePengelola"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/catethree"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:backgroundTintMode="multiply"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tUbahProfile_HomePengelola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:text="Ubah Profile"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </FrameLayout>
+
+        <FrameLayout
+
+            android:id="@+id/tambahRumahRetret_HomePengelola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -56,20 +75,89 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:scaleType="centerCrop">
 
-        <ImageView
-            android:id="@+id/bDeleteRumahRetret_HomePengelola"
+            <ImageView
+                android:id="@+id/ivTambahRumahRetret_HomePengelola"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/catetwo"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:backgroundTintMode="multiply"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tTambahRumahRetret_HomePengelola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:text="Tambah Rumah Retret"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/ubahRumahRetret_HomePengelola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivUbahRumahRetret_HomePengelola"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/cateone"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:backgroundTintMode="multiply"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tUbahRumahRetret_HomePengelola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:text="Ubah Rumah Retret"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/hapusRumahRetret_HomePengelola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivHapusRumahRetret_HomePengelola"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cateone"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:backgroundTintMode="multiply"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tHapusRumahRetret_HomePengelola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:text="Hapus Rumah Retret"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </FrameLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
