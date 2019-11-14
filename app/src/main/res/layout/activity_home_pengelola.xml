@@ -145,6 +145,7 @@
                 android:background="@drawable/cateone"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:backgroundTintMode="multiply"
+                android:onClick="toHapus"
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -154,6 +155,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-light"
                 android:text="Hapus Rumah Retret"
+                android:onClick="toHapus"
                 android:textColor="#FFFFFF"
                 android:textSize="28sp" />
         </FrameLayout>
