@@ -1,8 +1,5 @@
 package com.example.retretku;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -11,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.retretku.object.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterActivity extends AppCompatActivity {
 
     Button btnsignup;
-    EditText txtemail,txpassword;
+    EditText txtemail,txpassword,txtnama,txttelp;
 
     private FirebaseAuth mAuth;
     private ProgressDialog pDialog;
@@ -34,6 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
         btnsignup = findViewById(R.id.btnsignup);
         txtemail = findViewById(R.id.txtemail);
         txpassword = findViewById(R.id.txtpass);
+        txtnama = findViewById(R.id.txtnama);
+        txttelp = findViewById(R.id.txtnotelp);
+
+
         mAuth = FirebaseAuth.getInstance();
 
         btnsignup.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 pDialog = new ProgressDialog(RegisterActivity.this);
-                pDialog.setMessage("Tunggu Sebentar");
+                pDialog.setMessage("Memuat");
                 pDialog.show();
 
                 mAuth.createUserWithEmailAndPassword(email, pass).
@@ -70,15 +75,28 @@ public class RegisterActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
 
+                                    String nama = txtnama.getText().toString();
+                                    String no = txttelp.getText().toString();
+                                    String email = txtemail.getText().toString();
+                                    String password = txpassword.getText().toString();
+                                    String id = task.getResult().getUser().getUid();
+                                    User u = new User(id, password,nama,no,1,email);
+
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                    DatabaseReference myRef = database.getReference("User");
-                                    myRef.setValue("Hello, World!");
+
+                                    // data disimpan ke users-->uid-->datanya
+                                    //nanti password harus di hash
+                                    DatabaseReference myRef = database.getReference("Users").child(u.getId_user());
+
+                                    myRef.setValue(u);
 
                                     pDialog.dismiss();
                                     Toast.makeText(RegisterActivity.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
+
                                 }
                                 else{
                                     Toast.makeText(RegisterActivity.this, "Gagal Mendaftar", Toast.LENGTH_SHORT).show();
+                                    pDialog.dismiss();
                                 }
                             }
                         });
