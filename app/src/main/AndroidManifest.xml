@@ -9,15 +9,21 @@
         android:roundIcon="@mipmap/ic_retretku_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailPemesananActivity"></activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".DetailPemesananActivity" />
         <activity android:name=".DetailTempatRetretActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".ActivityCalendarDetail" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".SplashScreen.SplahScreen"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

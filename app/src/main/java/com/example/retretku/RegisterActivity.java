@@ -1,6 +1,7 @@
 package com.example.retretku;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -35,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnsignup = findViewById(R.id.btnsignup);
         txtemail = findViewById(R.id.txtemail);
         txpassword = findViewById(R.id.txtpass);
-        txtnama = findViewById(R.id.txtnama);
+        txtnama = findViewById(R.id.nav_name);
         txttelp = findViewById(R.id.txtnotelp);
 
 
@@ -102,6 +103,12 @@ public class RegisterActivity extends AppCompatActivity {
                         });
             }
         });/*</btnsignup onlclick>*/
+    }
+
+    public void signin(View v){
+        Intent i = new Intent(this,LoginActivity.class);
+        startActivity(i);
+        finish();
     }
 
 
