@@ -1,8 +1,6 @@
 package com.example.retretku;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +8,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class login extends AppCompatActivity {
 
@@ -42,7 +37,7 @@ public class login extends AppCompatActivity {
             startActivity(i);
         }
         else if(txtemail.getText().toString().equals("pengelola") && password.getText().toString().equals("p")){
-            Intent i = new Intent(this,HomePengelola.class);
+            Intent i = new Intent(this, ActivityPengelola.class);
             startActivity(i);
         }
         else{
