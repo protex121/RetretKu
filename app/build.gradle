@@ -31,5 +31,4 @@ dependencies {
     implementation 'androidx.navigation:navigation-runtime:2.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
-
 }
