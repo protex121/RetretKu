@@ -16,14 +16,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/bHome_HomePengelola"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:id="@+id/lFragment_HomePengelola"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/topBar_HomePengelola"
         app:layout_constraintStart_toStartOf="@+id/topBar_HomePengelola"
         app:layout_constraintTop_toTopOf="@+id/topBar_HomePengelola"
-        app:srcCompat="@drawable/retretku_home_icon_white" />
+        app:srcCompat="@drawable/ap_home_white" />
 
     <FrameLayout
         android:id="@+id/fragmentContainer_HomePengelola"
@@ -40,8 +40,10 @@
         android:id="@+id/navbar_HomePengelola"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navbar_activity_pengelola" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

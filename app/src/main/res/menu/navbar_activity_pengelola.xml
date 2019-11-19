@@ -4,11 +4,14 @@
 
     <item
         android:id="@+id/o_home_ActivityPengelola"
+        android:icon="@drawable/ap_home_white"
         android:title="Home" />
     <item
         android:id="@+id/o_sewaan_ActivityPengelola"
+        android:icon="@drawable/ap_list_white"
         android:title="Sewaan-ku" />
     <item
         android:id="@+id/o_profile_ActivityPengelola"
+        android:icon="@drawable/ap_profile_white"
         android:title="Profile" />
 </menu>
