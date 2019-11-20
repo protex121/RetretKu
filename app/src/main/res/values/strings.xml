@@ -8,4 +8,8 @@ Mauris ac dapibus nibh. Vestibulum sagittis metus vel dictum suscipit. Vestibulu
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="latest_rating_ProfilePengelola">Rating Paling Baru</string>
+    <string name="avg_rating_ProfilePengelola">Rata-Rata Rating Anda</string>
+    <string name="change_profile_ProfilePengelola">Ubah Profile</string>
+    <string name="listing_SewaanPengelola">Sewaan Anda</string>
 </resources>
