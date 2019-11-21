@@ -1,5 +1,7 @@
 package com.example.retretku.object;
 
+import androidx.annotation.NonNull;
+
 public class User {
     private String id_user, password_user, nama_user, telp_user, email_user;
     private int status; //1.Admin 2.User
@@ -12,6 +14,8 @@ public class User {
         this.status = status;
         this.email_user = email_user;
     }
+
+    public User(){}
 
     public String getId_user() {
         return id_user;
@@ -60,4 +64,12 @@ public class User {
     public void setEmail_user(String email_user) {
         this.email_user = email_user;
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.nama_user;
+    }
+
+
 }

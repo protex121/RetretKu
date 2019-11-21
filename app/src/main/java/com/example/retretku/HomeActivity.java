@@ -1,24 +1,21 @@
 package com.example.retretku;
 
 import android.os.Bundle;
-
-import com.example.retretku.object.User;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.renderscript.Sampler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
+import com.example.retretku.object.RumahRetret;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -26,15 +23,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.Menu;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -102,8 +90,6 @@ public class HomeActivity extends AppCompatActivity {
         openFragment(fragment);
     }
 
-
-
     private void openFragment(Fragment fragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frame_container, fragment);
@@ -114,6 +100,24 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.action_logout){
+            mAuth.signOut();
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void lihat_detail_rumah(RumahRetret r){
+        fragment = new DetailRumahRetretFragment();
+        Bundle b = new Bundle();
+        b.putString("nama",r.getRumah_nama());
+        b.putString("alamat",r.getRumah_alamat());
+        fragment.setArguments(b);
+        openFragment(fragment);
     }
 
 

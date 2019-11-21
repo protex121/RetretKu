@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import es.dmoral.toasty.Toasty;
+
 public class RegisterActivity extends AppCompatActivity {
 
     Button btnsignup;
@@ -38,7 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
         txpassword = findViewById(R.id.txtpass);
         txtnama = findViewById(R.id.nav_name);
         txttelp = findViewById(R.id.txtnotelp);
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -92,11 +93,11 @@ public class RegisterActivity extends AppCompatActivity {
                                     myRef.setValue(u);
 
                                     pDialog.dismiss();
-                                    Toast.makeText(RegisterActivity.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
+                                    Toasty.success(RegisterActivity.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
 
                                 }
                                 else{
-                                    Toast.makeText(RegisterActivity.this, "Gagal Mendaftar", Toast.LENGTH_SHORT).show();
+                                    Toasty.error(RegisterActivity.this, "Gagal Mendaftar", Toast.LENGTH_SHORT).show();
                                     pDialog.dismiss();
                                 }
                             }
