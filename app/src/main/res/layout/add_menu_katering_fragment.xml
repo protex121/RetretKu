@@ -26,13 +26,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginTop="38dp"
+        android:layout_marginEnd="49dp"
         android:text="Deskripsi"
         android:textAlignment="center"
         android:textColor="#3E4993"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/text_deskripsi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtfeed4" />
+
+    <TextView
+        android:id="@+id/txtfeed9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="49dp"
+        android:text="Jenis Menu"
+        android:textAlignment="center"
+        android:textColor="#3E4993"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfeed5" />
 
     <EditText
         android:id="@+id/txt_nama"
@@ -50,9 +68,8 @@
 
     <EditText
         android:id="@+id/text_deskripsi"
-        android:layout_width="0dp"
+        android:layout_width="228dp"
         android:layout_height="160dp"
-        android:layout_marginStart="49dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -60,18 +77,38 @@
         android:hint="Deskripsi Menu"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtfeed5"
         app:layout_constraintTop_toBottomOf="@+id/txt_nama" />
 
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="0dp"
+        android:layout_width="91dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="160dp"
         android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_deskripsi" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="154dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_deskripsi">
+
+        <RadioButton
+            android:id="@+id/rb_makanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Makanan" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Snack" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

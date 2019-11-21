@@ -39,7 +39,7 @@ public class login extends AppCompatActivity {
         }
         else if(txtemail.getText().toString().equals("a") && password.getText().toString().equals("a")){
             Intent i = new Intent(this,katering.class);
-            startActivity(i);
+            startActivityForResult(i,2);
         }
         else{
             Intent i = new Intent(this, home.class);

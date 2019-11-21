@@ -27,8 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="347dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="22dp"
         android:text="Menu"
         android:textAlignment="center"
         android:textColor="#3E4993"
@@ -36,7 +37,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/rv_menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_order" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_order"
@@ -51,13 +53,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtfeed2" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/rv_menu"
-        android:layout_width="371dp"
-        android:layout_height="401dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="21dp"
+        android:layout_width="372dp"
+        android:layout_height="397dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
