@@ -51,7 +51,7 @@ public class DetailRumahRetretFragment extends Fragment {
                 FirebaseDatabase db = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = db.getReference("Users").child(currentUser.getUid()).child("Retret");
                 String id_retret = myRef.push().getKey();
-                Retret r = new Retret(id_retret);
+                Retret r = new Retret(id_retret,"asd");
                 myRef.push().setValue(r);
 
                 Toasty.success(getContext(), "Success Book Rumah!", Toast.LENGTH_SHORT, true).show();

@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 import es.dmoral.toasty.Toasty;
 
 public class HomeActivity extends AppCompatActivity {
@@ -90,6 +92,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        cetak_log();
         //buka fragment
         openFragment(fragment);
     }
@@ -137,4 +140,62 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    //untuk coba"
+    private void cetak_log(){
+        //coddingan dibawah ini untuk mendapatkan data dari user yang sedang login
+        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        String id_user = currentUser.getUid(); //mendapatkan ID user yang sedang login
+
+        DatabaseReference myRef = database.getReference("Users").child(id_user).child("daftar_retret");
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Retret r = snapshot.getValue(Retret.class);
+                    System.out.println("=======");
+                    System.out.println(r.getId_retret());
+                    System.out.println(r.getDeksripsi());
+                    System.out.println("=======");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });*/
+
+        //coddingan dibawah untuk mendapatkan data dari user lain
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Users");
+
+        final ArrayList<String> id_user = new ArrayList<>();
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    //System.out.println("=========");
+                    //System.out.println("ID USER : " + snapshot.getKey());
+                    //.out.println(dataSnapshot.child(""));
+                    //System.out.println("=========");
+                    id_user.add(snapshot.getKey());
+                }
+
+                System.out.println("=========");
+                System.out.println(dataSnapshot.child(id_user.get(0)).child("nama_user").getValue(String.class));
+                System.out.println(dataSnapshot.child(id_user.get(1)).child("nama").getValue(String.class));
+                System.out.println(dataSnapshot.child(id_user.get(2)).child("nama").getValue(String.class));
+                System.out.println("==========");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
 }

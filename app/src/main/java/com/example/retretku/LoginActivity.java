@@ -60,8 +60,24 @@ public class LoginActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
 
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    String id = task.getResult().getUser().getUid();
-                    DatabaseReference myRef = database.getReference("Users").child(id);
+                    String id = task.getResult().getUser().getUid(); //ini artinya aku ngambil ID user yang sedang login, kembaliannya adalah ID yang gabisa dibaca itu
+                    DatabaseReference myRef = database.getReference("Users").child(id); //ini artinya aku ngambil dari Database yang ke user trus berdasarkan ID user uang sedang login
+
+                    //dari sini aku misalkan ya aku asumsikan sudah pesen tempat e trus tak ambil historynya dari database berdasarkan id
+                    //dibawah ini adalah data dummy memasukan 2 data
+                    //DatabaseReference myRefdummy = database.getReference().child("Users").child(id).child("daftar_retret");
+                    //String id_retret = myRefdummy.push().getKey();
+                    //Retret r = new Retret(id_retret,"asd");
+                    //myRefdummy.push().setValue(r);
+
+                    //id_retret = myRefdummy.push().getKey();
+                    //r = new Retret(id_retret,"asdsd");
+                    //myRefdummy.push().setValue(r);
+                    //sampai dibawah sini harusnya kalian mengerti
+
+
+
+
 
                     myRef.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -69,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                             User u = dataSnapshot.getValue(User.class);
                             if(u.getStatus() == 0){
                                 //0 itu user
+                                FirebaseUser user = mAuth.getCurrentUser();
+
                                 pDialog.dismiss();
                                 Intent i = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(i);
