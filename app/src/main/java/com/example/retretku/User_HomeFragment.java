@@ -45,7 +45,6 @@ public class User_HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.user_homefragment_layout, container,false);
 
-
         myRef = FirebaseDatabase.getInstance().getReference().child("RumahRetret");
         myRef.keepSynced(true);
         options = new FirebaseRecyclerOptions.Builder<RumahRetret>().setQuery(myRef,RumahRetret.class).build();
@@ -97,6 +96,9 @@ public class User_HomeFragment extends Fragment {
         Intent i = new Intent(getContext(),DetailTempatRetretActivity.class);
         startActivity(i);
     }
+
+
+
 
 
 }

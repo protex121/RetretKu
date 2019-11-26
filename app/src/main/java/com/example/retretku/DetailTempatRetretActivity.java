@@ -34,8 +34,6 @@ public class DetailTempatRetretActivity extends AppCompatActivity implements OnM
         });
 
         mapFragment.getMapAsync(this);
-
-
     }
 
 
@@ -46,4 +44,6 @@ public class DetailTempatRetretActivity extends AppCompatActivity implements OnM
         mMap.addMarker(new MarkerOptions().position(latLng).title("BDI"));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
     }
+
+
 }

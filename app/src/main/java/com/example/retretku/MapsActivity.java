@@ -44,11 +44,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Geocoder geocoder = new Geocoder(MapsActivity.this);
                     try{
                         addressList = geocoder.getFromLocationName(location,1);
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
-
-                    if(addressList.size()!= 0 || addressList != null){
                         Address address = addressList.get(0);
                         LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
                         mMap.addMarker(new MarkerOptions().position(latLng).title(location));
@@ -56,8 +51,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         for (int i = 0; i < addressList.size(); i++) {
                             System.out.println(addressList.get(i).getFeatureName());
                         }
-                    }
-                    else{
+                    }catch (IOException e){
+                        e.printStackTrace();
                         Toasty.warning(getApplicationContext(), "Masukan Nama tempat lebih spesifik", Toast.LENGTH_SHORT, true).show();
                     }
 

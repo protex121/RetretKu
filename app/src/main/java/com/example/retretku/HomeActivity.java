@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import es.dmoral.toasty.Toasty;
+
 public class HomeActivity extends AppCompatActivity {
 
     //firebase
@@ -33,6 +35,8 @@ public class HomeActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
     private Toolbar toolbar;
     private NavigationView nv;
+
+    private int k = 0;
 
     Fragment fragment = new User_HomeFragment();
 
@@ -118,6 +122,18 @@ public class HomeActivity extends AppCompatActivity {
         b.putString("alamat",r.getRumah_alamat());
         fragment.setArguments(b);
         openFragment(fragment);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        k++;
+        if(k == 1) {
+            Toasty.info(getApplicationContext(),"Back 1 kali lagi untuk menutup aplikasi", Toast.LENGTH_SHORT).show();
+        } else {
+            finishAndRemoveTask();
+            System.exit(0);
+        }
     }
 
 

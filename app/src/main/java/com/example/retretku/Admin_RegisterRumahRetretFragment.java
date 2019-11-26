@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import es.dmoral.toasty.Toasty;
+
 public class Admin_RegisterRumahRetretFragment extends Fragment {
 
     TextView txtemail,txtnama,txtpassword,txtalamat;
@@ -67,7 +69,7 @@ public class Admin_RegisterRumahRetretFragment extends Fragment {
                             myRef.setValue(r);
 
                             pDialog.dismiss();
-                            Toast.makeText(getContext(), "Berhasil Mendaftarkan rumah retret", Toast.LENGTH_SHORT).show();
+                            Toasty.success(getContext(), "Berhasil Mendaftarkan rumah retret", Toast.LENGTH_SHORT).show();
                         }
                         else{
 
@@ -96,7 +98,7 @@ public class Admin_RegisterRumahRetretFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
     }
+
 
 }
