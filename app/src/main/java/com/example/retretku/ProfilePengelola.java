@@ -46,7 +46,7 @@ public class ProfilePengelola extends Fragment {
         alamat = v.findViewById(R.id.alamatRumahRetret_ProfilePengelola);
         notelp = v.findViewById(R.id.notelpRumahRetret_ProfilePengelola);
         tRating = v.findViewById(R.id.tRating_ProfilePengelola);
-        rateBar = v.findViewById(R.id.ratingAnda_ProfilePengelola);
+        rateBar = v.findViewById(R.id.rating_ProfilePengelola);
         bEdit = v.findViewById(R.id.bEditProfile_ProfilePengelola);
 
         //Filling in them ratings
