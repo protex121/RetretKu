@@ -7,33 +7,183 @@
     android:layout_height="match_parent"
     tools:context=".SewaanPengelola" >
 
-    <TextView
-        android:id="@+id/tSewaan_SewaanPengelola"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:paddingStart="24dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="18dp"
-        android:text="@string/listing_SewaanPengelola"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSewaan_SewaanPengelola"
+    <ScrollView
+        android:id="@+id/mainScrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tSewaan_SewaanPengelola" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/mainLinearLayout_SewaanPengelola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tSewaan_SewaanPengelola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:paddingStart="20dp"
+                android:paddingTop="24dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="18dp"
+                android:text="@string/listing_SewaanPengelola"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divider1_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightestgreen" />
+
+            <TextView
+                android:id="@+id/tNamaSewaan_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="8dp"
+                android:text="Bukit Doa Immanuel"
+                android:textSize="22sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/galleryScrollView_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:id="@+id/galleryLinearLayout_SewaanPengelola"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/mainThumbnail_SewaanPengelola"
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/catethree"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/firstColumnThumbnail_SewaanPengelola"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/topLeftCornerThumb_SewaanPengelola"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="top"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/newbg"
+                            app:srcCompat="@drawable/itempictwo" />
+
+                        <ImageView
+                            android:id="@+id/bottomLeftCornerThumb_SewaanPengelola"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/catetwo"
+                            app:srcCompat="@drawable/catethree" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/secondColumnThumbnail_SewaanPengelola"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/topRightCornerThumb_SewaanPengelola"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/catetwo" />
+
+                        <TextView
+                            android:id="@+id/seeMoreThumb_SewaanPengelola"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
+                            android:background="@color/lightestgray"
+                            android:backgroundTintMode="screen"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:gravity="center"
+                            android:text="See More"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tDeskripsi_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="150dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="16dp"
+                android:text="Deskripsi"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/deskripsiScrollView_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/deskripsiLinearLayout_SewaanPengelola"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tDeskripsiSewaan_SewaanPengelola"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Tap to Edit"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="18dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/lorem_ipsum" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <TextView
+                android:id="@+id/tFasilitas_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp"
+                android:text="Fasilitas"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFasilitas_SewaanPengelola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18dp"
+                android:paddingBottom="18dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

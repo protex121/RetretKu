@@ -58,6 +58,12 @@ public class ActivityPengelola extends AppCompatActivity implements HomePengelol
         ft.commit();
     }
 
+    public void goToGallerySewaan(){
+        Intent i = new Intent(this, GallerySewaan.class);
+        startActivity(i);
+        finish();
+    }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 
