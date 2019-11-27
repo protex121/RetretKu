@@ -25,6 +25,16 @@
         app:layout_constraintTop_toTopOf="@+id/topBar_HomePengelola"
         app:srcCompat="@drawable/ap_home_white" />
 
+    <ImageView
+        android:id="@+id/lLogout_HomePengelola"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainer_HomePengelola"
+        app:layout_constraintEnd_toEndOf="@+id/topBar_HomePengelola"
+        app:layout_constraintTop_toTopOf="@+id/topBar_HomePengelola"
+        app:srcCompat="@drawable/ap_logout_white" />
+
     <FrameLayout
         android:id="@+id/fragmentContainer_HomePengelola"
         android:layout_width="match_parent"
