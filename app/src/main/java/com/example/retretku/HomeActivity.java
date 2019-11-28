@@ -15,7 +15,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.retretku.object.RumahRetret;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -40,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private int k = 0;
 
-    Fragment fragment = new User_HomeFragment();
+    Fragment fragment = new UserProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,15 +117,6 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void lihat_detail_rumah(RumahRetret r){
-        fragment = new DetailRumahRetretFragment();
-        Bundle b = new Bundle();
-        b.putString("nama",r.getRumah_nama());
-        b.putString("alamat",r.getRumah_alamat());
-        fragment.setArguments(b);
-        openFragment(fragment);
-    }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -138,7 +128,6 @@ public class HomeActivity extends AppCompatActivity {
             System.exit(0);
         }
     }
-
 
     //untuk coba"
     private void cetak_log(){
@@ -169,26 +158,17 @@ public class HomeActivity extends AppCompatActivity {
 
         //coddingan dibawah untuk mendapatkan data dari user lain
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Users");
-
+        final DatabaseReference myRef = database.getReference("Users");
         final ArrayList<String> id_user = new ArrayList<>();
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    //System.out.println("=========");
-                    //System.out.println("ID USER : " + snapshot.getKey());
-                    //.out.println(dataSnapshot.child(""));
-                    //System.out.println("=========");
                     id_user.add(snapshot.getKey());
                 }
-
-                System.out.println("=========");
-                System.out.println(dataSnapshot.child(id_user.get(0)).child("nama_user").getValue(String.class));
-                System.out.println(dataSnapshot.child(id_user.get(1)).child("nama").getValue(String.class));
-                System.out.println(dataSnapshot.child(id_user.get(2)).child("nama").getValue(String.class));
-                System.out.println("==========");
+                DatabaseReference tes = myRef.child(id_user.get(2)).child("status");
+                tes.setValue(4);
             }
 
             @Override
@@ -197,5 +177,9 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+
 }

@@ -93,13 +93,12 @@ public class User_HomeFragment extends Fragment {
 
     private void lihat_detail_rumah(RumahRetret r){
         //method untuk pindah
-        Intent i = new Intent(getContext(),DetailTempatRetretActivity.class);
+        Intent i = new Intent(getContext(), DetailTempatRetretActivity.class);
+        i.putExtra("nama", r.getRumah_nama());
+        i.putExtra("deskripsi",r.getRumah_deskripsi());
+        i.putExtra("alamat",r.getRumah_alamat());
+        i.putExtra("id", r.getRumah_id());
         startActivity(i);
     }
-
-
-
-
-
 
 }
