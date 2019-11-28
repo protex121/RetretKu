@@ -7,133 +7,151 @@
     android:layout_height="match_parent"
     tools:context=".ProfilePengelola" >
 
-    <ImageView
-        android:id="@+id/pp_ProfilePengelola"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/namaRumahRetret_ProfilePengelola"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="Leo Kressus"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/alamatRumahRetret_ProfilePengelola"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif-light"
-        android:text="HR Muhammad Nomor 45"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
-        app:layout_constraintTop_toBottomOf="@+id/namaRumahRetret_ProfilePengelola" />
-
-    <TextView
-        android:id="@+id/notelpRumahRetret_ProfilePengelola"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif-light"
-        android:text="081615447928"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
-        app:layout_constraintTop_toBottomOf="@+id/alamatRumahRetret_ProfilePengelola" />
-
-    <Button
-        android:id="@+id/bEditProfile_ProfilePengelola"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/change_profile_ProfilePengelola"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
-        app:layout_constraintTop_toBottomOf="@+id/notelpRumahRetret_ProfilePengelola" />
-
-    <TextView
-        android:id="@+id/ratingAnda_ProfilePengelola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/avg_rating_ProfilePengelola"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pp_ProfilePengelola" />
-
-    <TextView
-        android:id="@+id/tRating_ProfilePengelola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-black"
-        android:text="2.5"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_ProfilePengelola" />
-
-    <RatingBar
-        android:id="@+id/rating_ProfilePengelola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:isIndicator="true"
-        android:numStars="5"
-        android:rating="2.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingAnda_ProfilePengelola" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/latest_rating_ProfilePengelola"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tRating_ProfilePengelola" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRecentRatings_ProfilePengelola"
+    <ScrollView
+        android:id="@+id/mainScrollView_ProfilePengelola"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/mainLinearLayout_ProfilePengelola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentConstraintLayout_ProfilePengelola"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/alamatRumahRetret_ProfilePengelola"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="HR Muhammad Nomor 45"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
+                    app:layout_constraintTop_toBottomOf="@+id/namaRumahRetret_ProfilePengelola" />
+
+                <RatingBar
+                    android:id="@+id/rating_ProfilePengelola"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="2.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingAnda_ProfilePengelola" />
+
+                <ImageView
+                    android:id="@+id/pp_ProfilePengelola"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRecentRatings_ProfilePengelola"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/texxtRatingPalibBaru_ProfilePengelola" />
+
+                <TextView
+                    android:id="@+id/namaRumahRetret_ProfilePengelola"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Leo Kressus"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ratingAnda_ProfilePengelola"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/avg_rating_ProfilePengelola"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pp_ProfilePengelola" />
+
+                <TextView
+                    android:id="@+id/tRating_ProfilePengelola"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="2.5"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rating_ProfilePengelola" />
+
+                <TextView
+                    android:id="@+id/notelpRumahRetret_ProfilePengelola"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="081615447928"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
+                    app:layout_constraintTop_toBottomOf="@+id/alamatRumahRetret_ProfilePengelola" />
+
+                <Button
+                    android:id="@+id/bEditProfile_ProfilePengelola"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="@string/change_profile_ProfilePengelola"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pp_ProfilePengelola"
+                    app:layout_constraintTop_toBottomOf="@+id/notelpRumahRetret_ProfilePengelola" />
+
+                <TextView
+                    android:id="@+id/texxtRatingPalibBaru_ProfilePengelola"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/latest_rating_ProfilePengelola"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tRating_ProfilePengelola" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

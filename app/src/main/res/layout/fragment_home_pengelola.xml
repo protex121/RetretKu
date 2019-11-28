@@ -94,7 +94,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/lightestgreen"
-        app:layout_constraintBottom_toTopOf="@+id/rvOverview_HomePengelola"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileBase_HomePengelola" />
@@ -109,6 +108,23 @@
         android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTransaksiAnda_HomePengelola" />
+
+    <TextView
+        android:id="@+id/textTransaksiAnda_HomePengelola"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
+        android:text="Transaksi Anda"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sectionDivider_HomePengelola" />
 

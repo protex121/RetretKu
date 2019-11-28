@@ -64,6 +64,12 @@ public class ActivityPengelola extends AppCompatActivity implements HomePengelol
         finish();
     }
 
+    public void goToDetailTransaksi(){
+        Intent i = new Intent(this,DetailTransaksi.class);
+        startActivity(i);
+        finish();
+    }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 
