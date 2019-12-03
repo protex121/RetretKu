@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Comment;
+import com.example.retretku.Objects.Rating;
 
 import java.util.ArrayList;
 
@@ -30,8 +30,8 @@ public class rvRatingAdapter extends RecyclerView.Adapter<rvRatingAdapter.LRTPVi
 
     @Override
     public void onBindViewHolder(@NonNull LRTPViewHolder holder, int position) {
-        holder.nama.setText(ratings.get(position).getRater().nama);
-        holder.iv.setImageResource(ratings.get(position).getRater().imgAddress);
+        holder.nama.setText(ratings.get(position).getRater().getNama());
+        holder.iv.setImageResource(ratings.get(position).getRater().getImgAddress());
         holder.rate.setRating(ratings.get(position).getRating());
     }
 

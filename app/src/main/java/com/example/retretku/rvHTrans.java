@@ -10,15 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.retretku.Objects.Transaksi;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class rvHTrans extends RecyclerView.Adapter<rvHTrans.HTransViewHolder> {
     OnHTRANSClickListener onHTransClickListener;
-    ArrayList<HTrans> htrans;
+    ArrayList<Transaksi> htrans;
     Context parentActivity;
 
-    public rvHTrans(ArrayList<HTrans> htrans, Context parentActivity, OnHTRANSClickListener ohcl) {
+    public rvHTrans(ArrayList<Transaksi> htrans, Context parentActivity, OnHTRANSClickListener ohcl) {
         this.htrans = htrans;
         this.parentActivity = parentActivity;
         onHTransClickListener = ohcl;

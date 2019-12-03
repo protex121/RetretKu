@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.retretku.Objects.Transaksi;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,7 +27,7 @@ public class HomePengelola extends Fragment {
     ImageView pp;
     RatingBar ratingbar;
     RecyclerView rv;
-    ArrayList<HTrans> htrans;
+    ArrayList<Transaksi> htrans;
 
 
     public HomePengelola() {
@@ -41,10 +43,10 @@ public class HomePengelola extends Fragment {
 
         //Variable declarations
         htrans = new ArrayList<>();
-        htrans.add(new HTrans("ID000002",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,0));
-        htrans.add(new HTrans("ID000003",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,1));
-        htrans.add(new HTrans("ID000004",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,2));
-        htrans.add(new HTrans("ID000005",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,3));
+        htrans.add(new Transaksi("ID000002",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,0));
+        htrans.add(new Transaksi("ID000003",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,1));
+        htrans.add(new Transaksi("ID000004",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,2));
+        htrans.add(new Transaksi("ID000005",new Date(2019, 11, 10), new Date(2019, 11, 17),16000000,3));
 
         //RecyclerView settings
         rv = v.findViewById(R.id.rvOverview_HomePengelola);
@@ -53,7 +55,7 @@ public class HomePengelola extends Fragment {
             @Override
             public void onClick(View view, int pos) {
                 ActivityPengelola ap = (ActivityPengelola) getActivity();
-                ap.goToDetailTransaksi();
+                ap.goToDetailTransaksi(htrans.get(pos).getId_trans());
             }
         }));
 

@@ -64,8 +64,15 @@ public class ActivityPengelola extends AppCompatActivity implements HomePengelol
         finish();
     }
 
-    public void goToDetailTransaksi(){
+    public void goToDetailTransaksi(String id_trans){
         Intent i = new Intent(this,DetailTransaksi.class);
+        i.putExtra("id_trans", id_trans);
+        startActivity(i);
+        finish();
+    }
+
+    public void goToEditProfile(){
+        Intent i = new Intent(this, ActivityEditProfilePengelola.class);
         startActivity(i);
         finish();
     }

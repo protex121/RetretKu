@@ -15,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.retretku.Objects.Rating;
+import com.example.retretku.Objects.RumahRetret;
+
 import java.util.ArrayList;
 
 
@@ -49,12 +52,21 @@ public class ProfilePengelola extends Fragment {
         rateBar = v.findViewById(R.id.rating_ProfilePengelola);
         bEdit = v.findViewById(R.id.bEditProfile_ProfilePengelola);
 
+        //bEdit onclick
+        bEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ActivityPengelola ap = (ActivityPengelola) getActivity();
+                ap.goToEditProfile();
+            }
+        });
+
         //Filling in them ratings
         ratings = new ArrayList<>();
-        ratings.add(new Rating(new User(0,"Geoff","realg","111000"), 4));
-        ratings.add(new Rating(new User(0,"Reeves","realg","111000"), 3));
-        ratings.add(new Rating(new User(0,"Uhlan","realg","111000"), 2));
-        ratings.add(new Rating(new User(0,"Jeffrey","realg","111000"), 1));
+        ratings.add(new Rating(new RumahRetret(0,"Geoff","realg","111000"), 4));
+        ratings.add(new Rating(new RumahRetret(0,"Reeves","realg","111000"), 3));
+        ratings.add(new Rating(new RumahRetret(0,"Uhlan","realg","111000"), 2));
+        ratings.add(new Rating(new RumahRetret(0,"Jeffrey","realg","111000"), 1));
 
         //RecyclerView declaration things
         rv = v.findViewById(R.id.rvRecentRatings_ProfilePengelola);

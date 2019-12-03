@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.retretku.Objects.Fasilitas;
+
 import java.util.ArrayList;
 
 public class rvFasilitasPengelola extends RecyclerView.Adapter<rvFasilitasPengelola.LFPViewHolder> {

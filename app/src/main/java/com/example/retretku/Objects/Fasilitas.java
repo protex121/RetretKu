@@ -1,4 +1,4 @@
-package com.example.retretku;
+package com.example.retretku.Objects;
 
 public class Fasilitas {
     String id,nama,deskripsi;

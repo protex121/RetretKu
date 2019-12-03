@@ -1,13 +1,13 @@
-package com.example.retretku;
+package com.example.retretku.Objects;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Rating implements Parcelable {
-    User rater;
+    RumahRetret rater;
     float rating;
 
-    public Rating(User rater, float rating) {
+    public Rating(RumahRetret rater, float rating) {
         this.rater = rater;
         this.rating = rating;
     }
@@ -28,11 +28,11 @@ public class Rating implements Parcelable {
         }
     };
 
-    public User getRater() {
+    public RumahRetret getRater() {
         return rater;
     }
 
-    public void setRater(User rater) {
+    public void setRater(RumahRetret rater) {
         this.rater = rater;
     }
 
