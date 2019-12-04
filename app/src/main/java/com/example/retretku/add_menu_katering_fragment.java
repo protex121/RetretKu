@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -31,6 +32,9 @@ public class add_menu_katering_fragment extends Fragment {
     ImageView imgView;
     StorageReference imgStore;
     public Uri imgUri;
+
+    FirebaseAuth mAuth;
+
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
     ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
     ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
@@ -55,6 +59,8 @@ public class add_menu_katering_fragment extends Fragment {
         txt_nama = view.findViewById(R.id.txt_nama);
         txt_deskripsi = view.findViewById(R.id.text_deskripsi);
         imgView = view.findViewById(R.id.imageView12);
+
+        mAuth = FirebaseAuth.getInstance();
 
         imgView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +133,6 @@ public class add_menu_katering_fragment extends Fragment {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 imgView.setImageURI(imgUri);
             }
-        })
+        });
     }
 }
