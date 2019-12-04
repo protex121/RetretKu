@@ -83,8 +83,19 @@ public class add_paket_katering_fragment extends Fragment {
                 tmp_deskripsi = txt_deskripsi.getText().toString();
                 tmp_harga = Integer.parseInt(txt_harga.getText().toString());
                 if(!tmp_nama.equals("") && !tmp_deskripsi.equals("") && tmp_harga>-1 && radioButton1.isChecked()){
-                    list_paket_makanan.add(new paket_class(list_paket_makanan.size()+1+"",tmp_harga,tmp_nama,tmp_deskripsi));
-                    list_katering.get(0).add_paket_makanan(list_paket_makanan.size()+"");
+                    int tmp_jml = list_paket_makanan.size()+1;
+                    String tmp_id="PMA";
+                    if(tmp_jml<10){
+                        tmp_id+="00"+tmp_jml;
+                    }
+                    else if(tmp_jml<100){
+                        tmp_id+="0"+tmp_jml;
+                    }
+                    else{
+                        tmp_id+=tmp_jml;
+                    }
+                    list_paket_makanan.add(new paket_class(tmp_id,tmp_harga,tmp_nama,tmp_deskripsi));
+                    list_katering.get(0).add_paket_makanan(tmp_id);
 
                     for(int i=0;i<list_paket.size();i++){
                         list_paket_makanan.get(list_paket_makanan.size()-1).add_menu(list_paket.get(i).getId());
@@ -95,8 +106,19 @@ public class add_paket_katering_fragment extends Fragment {
                     ((katering)getActivity()).update(list_katering,list_paket_makanan,list_paket_snack,list_menu);
                 }
                 else if(!tmp_nama.equals("") && !tmp_deskripsi.equals("") && tmp_harga>-1 && radioButton2.isChecked()){
-                    list_paket_snack.add(new paket_class(list_paket_snack.size()+1+"",tmp_harga,tmp_nama,tmp_deskripsi));
-                    list_katering.get(0).add_paket_snack(list_paket_snack.size()+"");
+                    int tmp_jml = list_paket_snack.size()+1;
+                    String tmp_id="PSN";
+                    if(tmp_jml<10){
+                        tmp_id+="00"+tmp_jml;
+                    }
+                    else if(tmp_jml<100){
+                        tmp_id+="0"+tmp_jml;
+                    }
+                    else{
+                        tmp_id+=tmp_jml;
+                    }
+                    list_paket_snack.add(new paket_class(tmp_id,tmp_harga,tmp_nama,tmp_deskripsi));
+                    list_katering.get(0).add_paket_snack(tmp_id);
 
                     for(int i=0;i<list_paket.size();i++){
                         list_paket_snack.get(list_paket_snack.size()-1).add_menu(list_paket.get(i).getId());

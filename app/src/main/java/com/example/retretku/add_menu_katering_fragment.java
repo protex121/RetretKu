@@ -60,8 +60,19 @@ public class add_menu_katering_fragment extends Fragment {
                 }
 
                 if(!tmp_nama.equals("") && !tmp_deskripsi.equals("")){
-                    list_menu.add(new menu_class(list_menu.size()+1+"",tmp_nama,tmp,tmp_deskripsi));
-                    list_katering.get(0).add_menu(list_menu.size()+"");
+                    int tmp_jml = list_menu.size()+1;
+                    String tmp_id="MEN";
+                    if(tmp_jml<10){
+                        tmp_id+="00"+tmp_jml;
+                    }
+                    else if(tmp_jml<100){
+                        tmp_id+="0"+tmp_jml;
+                    }
+                    else{
+                        tmp_id+=tmp_jml;
+                    }
+                    list_menu.add(new menu_class(tmp_id,tmp_nama,tmp,tmp_deskripsi));
+                    list_katering.get(0).add_menu(tmp_id);
                     Toast.makeText(view.getContext(), "Menu Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
 
 
