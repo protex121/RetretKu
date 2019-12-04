@@ -1,24 +1,22 @@
 package com.example.retretku.Objects;
 
-import com.example.retretku.FasilitasTransaksi;
-
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Transaksi {
     //Bagian HTrans
-    String id_trans;
-    Date cin, cout;
-    long total;
-    int status;
+    private String id_trans;
+    private Date cin, cout;
+    private long total;
+    private int status;
 
     //Bagian DTrans
-    String id_detail;
+    private String id_detail;
 
     //Foreign Key
-    ArrayList<FasilitasTransaksi> fasilitasTransaksi;
-    ArrayList<String> idPaketMakanan;
-    ArrayList<String> idPaketSnack;
+    private ArrayList<FasilitasTransaksi> fasilitasTransaksi;
+    private ArrayList<String> idPaketMakanan;
+    private ArrayList<String> idPaketSnack;
 
 
     public Transaksi(String id_trans, Date cin, Date cout, long total, int status) {

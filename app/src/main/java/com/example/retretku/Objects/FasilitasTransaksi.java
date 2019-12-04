@@ -1,11 +1,11 @@
-package com.example.retretku;
+package com.example.retretku.Objects;
 
 import com.example.retretku.Objects.Fasilitas;
 
 public class FasilitasTransaksi {
-    Fasilitas fasilitas;
-    int jml;
-    long subtotal;
+    private Fasilitas fasilitas;
+    private int jml;
+    private long subtotal;
 
     public FasilitasTransaksi(Fasilitas fasilitas, int jml) {
         this.fasilitas = fasilitas;
@@ -27,5 +27,13 @@ public class FasilitasTransaksi {
 
     public void setJml(int jml) {
         this.jml = jml;
+    }
+
+    public long getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(long subtotal) {
+        this.subtotal = subtotal;
     }
 }
