@@ -32,7 +32,7 @@
                 android:paddingTop="24dp"
                 android:paddingEnd="24dp"
                 android:paddingBottom="18dp"
-                android:text="@string/listing_SewaanPengelola"
+                android:text="Sewaan Anda"
                 android:textColor="@color/colorPrimary"
                 android:textSize="30sp" />
 
@@ -183,6 +183,19 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="18dp"
                 android:paddingBottom="18dp" />
+
+            <Button
+                android:id="@+id/bTambahFas_SewaanPengelola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Tambah Fasilitas"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 

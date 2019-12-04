@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private int k = 0;
 
-    Fragment fragment = new UserProfileFragment();
+//    Fragment fragment = new UserProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
 
         cetak_log();
         //buka fragment
-        openFragment(fragment);
+//        openFragment(fragment);
     }
 
     private void openFragment(Fragment fragment){

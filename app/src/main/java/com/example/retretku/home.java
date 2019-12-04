@@ -43,55 +43,6 @@ public class home extends AppCompatActivity {
         Typeface MMedium = Typeface.createFromAsset(getAssets(), "fonts/MMedium.ttf");
         Typeface MLight = Typeface.createFromAsset(getAssets(), "fonts/MLight.ttf");
         Typeface MRegular = Typeface.createFromAsset(getAssets(), "fonts/MRegular.ttf");
-
-        itemOne = (LinearLayout) findViewById(R.id.itemOne);
-        itemTwo = (LinearLayout) findViewById(R.id.itemTwo);
-        itemThree = (LinearLayout) findViewById(R.id.itemThree);
-
-        categoryItem = (HorizontalScrollView) findViewById(R.id.feed);
-
-
-        tvSweet = (TextView) findViewById(R.id.txtjudul);
-        tvSweetSub = (TextView) findViewById(R.id.txtsubjudul);
-        tvCate = (TextView) findViewById(R.id.txtfeed);
-
-        tvRare = (TextView) findViewById(R.id.txtpopular);
-        tvItemOne = (TextView) findViewById(R.id.tvItemOne);
-        tvItemPriceOne = (TextView) findViewById(R.id.tvItemPriceOne);
-
-        tvItemTwo = (TextView) findViewById(R.id.tvItemTwo);
-        tvItemPriceTwo = (TextView) findViewById(R.id.tvItemPriceTwo);
-
-        tvItemThree = (TextView) findViewById(R.id.tvItemThree);
-        tvItemPriceThree = (TextView) findViewById(R.id.tvItemPriceThree);
-
-        tvSweet.setTypeface(MMedium);
-        tvSweetSub.setTypeface(MLight);
-        tvCate.setTypeface(MMedium);
-
-        tvRare.setTypeface(MMedium);
-        tvItemOne.setTypeface(MRegular);
-        tvItemPriceOne.setTypeface(MLight);
-
-        tvItemTwo.setTypeface(MRegular);
-        tvItemPriceTwo.setTypeface(MLight);
-
-        tvItemThree.setTypeface(MRegular);
-        tvItemPriceThree.setTypeface(MLight);
-
-
-        tvSweet.startAnimation(fromtopbottom);
-        tvSweetSub.startAnimation(fromtopbottom);
-
-        tvCate.startAnimation(fromtopbottom);
-        tvRare.startAnimation(fromtopbottom);
-
-        categoryItem.startAnimation(fromtopbottom);
-
-        itemOne.startAnimation(fromtopbottom);
-        itemTwo.startAnimation(fromtopbottomtwo);
-        itemThree.startAnimation(fromtopbottomthree);
-
     }
 
     public void pesan(View v){

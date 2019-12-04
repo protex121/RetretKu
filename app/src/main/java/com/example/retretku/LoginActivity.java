@@ -80,13 +80,19 @@ public class LoginActivity extends AppCompatActivity {
                     myRef.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            User u = dataSnapshot.getValue(User.class);
+                            User u = (User)dataSnapshot.getValue(User.class);
                             //punya juli
                             if(u.getEmail_user().equals("admin@gmail.com") && u.getPassword_user().equals("admin")){
                                 pDialog.dismiss();
                                 Intent i = new Intent(getApplicationContext(),DashboardActivity.class);
                                 startActivity(i);
                                 Toasty.info(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
+                            }
+                            else if(u.getEmail_user().equals("pengelola@gmail.com") && u.getPassword_user().equals("qweqwe")){
+                                pDialog.dismiss();
+                                Intent i = new Intent(getApplicationContext(),ActivityPengelola.class);
+                                startActivity(i);
+                                Toasty.info(getApplicationContext(),"PENGELOLA",Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 FirebaseUser user = mAuth.getCurrentUser();

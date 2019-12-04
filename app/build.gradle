@@ -72,5 +72,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Midtrans untuk pembayaran
-    implementation 'com.midtrans:uikit:1.23.1-SANDBOX'
+//    implementation 'com.midtrans:uikit:1.23.1-SANDBOX'
 }
