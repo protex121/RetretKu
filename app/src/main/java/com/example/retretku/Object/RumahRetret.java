@@ -3,71 +3,87 @@ package com.example.retretku.Object;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.retretku.Objects.Rating;
+import com.example.retretku.Objects.Transaksi;
+
+import java.util.ArrayList;
+
 public class RumahRetret implements Parcelable {
-    private String rumah_id,rumah_nama,rumah_email,rumah_pass,rumah_alamat;
-    private int rumah_rating,rumah_status,rumah_kapasitas;
+    private Integer mainImage;
+    private String rumah_id,rumah_nama,rumah_email,rumah_pass,rumah_alamat, rumah_notelp;
+    private int rumah_status,rumah_kapasitas;
+    private float rumah_rating;
     private String rumah_deskripsi;
 
     private double longitude,latitude;
 
+    //Gallery
+    ArrayList<Integer> images;
+
+    //Foreign Key
+    ArrayList<Transaksi> transaksi;
+    ArrayList<Rating> ratings;
+
     //nanti constructornya diganti
-    public RumahRetret(String rumah_id, String rumah_nama, String rumah_email,String rumah_pass, String rumah_alamat, double longitude,double latitude) {
+    public RumahRetret(String rumah_id, String rumah_nama, String rumah_email,String rumah_pass, String rumah_alamat, String rumah_notelp, double longitude,double latitude) {
         this.rumah_id = rumah_id;
         this.rumah_nama = rumah_nama;
+        this.rumah_email = rumah_email;
         this.rumah_pass = rumah_pass;
         this.rumah_alamat = rumah_alamat;
+        this.rumah_notelp = rumah_notelp;
+        this.rumah_rating = 0;
+        this.rumah_status = 1;
+        this.rumah_kapasitas = 0;
+        this.rumah_deskripsi = "This user has not set their description yet!";
         this.latitude = latitude;
         this.longitude = longitude;
-        this.rumah_email = rumah_email;
+        this.images = new ArrayList<>();
+        this.transaksi = new ArrayList<>();
+        this.ratings = new ArrayList<>();
     }
 
     public RumahRetret(){}
 
-    protected RumahRetret(Parcel in) {
-        rumah_id = in.readString();
-        rumah_nama = in.readString();
-        rumah_email = in.readString();
-        rumah_pass = in.readString();
-        rumah_alamat = in.readString();
-        rumah_rating = in.readInt();
-        rumah_status = in.readInt();
-        rumah_kapasitas = in.readInt();
-        rumah_deskripsi = in.readString();
-        longitude = in.readDouble();
-        latitude = in.readDouble();
+    public Integer getMainImage() {
+        return mainImage;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(rumah_id);
-        dest.writeString(rumah_nama);
-        dest.writeString(rumah_email);
-        dest.writeString(rumah_pass);
-        dest.writeString(rumah_alamat);
-        dest.writeInt(rumah_rating);
-        dest.writeInt(rumah_status);
-        dest.writeInt(rumah_kapasitas);
-        dest.writeString(rumah_deskripsi);
-        dest.writeDouble(longitude);
-        dest.writeDouble(latitude);
+    public void setMainImage(Integer mainImage) {
+        this.mainImage = mainImage;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public String getRumah_notelp() {
+        return rumah_notelp;
     }
 
-    public static final Creator<RumahRetret> CREATOR = new Creator<RumahRetret>() {
-        @Override
-        public RumahRetret createFromParcel(Parcel in) {
-            return new RumahRetret(in);
-        }
+    public void setRumah_notelp(String rumah_notelp) {
+        this.rumah_notelp = rumah_notelp;
+    }
 
-        @Override
-        public RumahRetret[] newArray(int size) {
-            return new RumahRetret[size];
-        }
-    };
+    public ArrayList<Integer> getImages() {
+        return images;
+    }
+
+    public void setImages(ArrayList<Integer> images) {
+        this.images = images;
+    }
+
+    public ArrayList<Transaksi> getTransaksi() {
+        return transaksi;
+    }
+
+    public void setTransaksi(ArrayList<Transaksi> transaksi) {
+        this.transaksi = transaksi;
+    }
+
+    public ArrayList<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(ArrayList<Rating> ratings) {
+        this.ratings = ratings;
+    }
 
     public String getRumah_id() {
         return rumah_id;
@@ -101,7 +117,7 @@ public class RumahRetret implements Parcelable {
         this.rumah_alamat = rumah_alamat;
     }
 
-    public int getRumah_rating() {
+    public float getRumah_rating() {
         return rumah_rating;
     }
 
@@ -161,4 +177,60 @@ public class RumahRetret implements Parcelable {
     public String toString() {
         return this.rumah_nama;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.mainImage);
+        dest.writeString(this.rumah_id);
+        dest.writeString(this.rumah_nama);
+        dest.writeString(this.rumah_email);
+        dest.writeString(this.rumah_pass);
+        dest.writeString(this.rumah_alamat);
+        dest.writeFloat(this.rumah_rating);
+        dest.writeInt(this.rumah_status);
+        dest.writeInt(this.rumah_kapasitas);
+        dest.writeString(this.rumah_deskripsi);
+        dest.writeDouble(this.longitude);
+        dest.writeDouble(this.latitude);
+        dest.writeList(this.images);
+        dest.writeList(this.transaksi);
+        dest.writeTypedList(this.ratings);
+    }
+
+    protected RumahRetret(Parcel in) {
+        this.mainImage = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.rumah_id = in.readString();
+        this.rumah_nama = in.readString();
+        this.rumah_email = in.readString();
+        this.rumah_pass = in.readString();
+        this.rumah_alamat = in.readString();
+        this.rumah_rating = in.readInt();
+        this.rumah_status = in.readInt();
+        this.rumah_kapasitas = in.readInt();
+        this.rumah_deskripsi = in.readString();
+        this.longitude = in.readDouble();
+        this.latitude = in.readDouble();
+        this.images = new ArrayList<Integer>();
+        in.readList(this.images, Integer.class.getClassLoader());
+        this.transaksi = new ArrayList<Transaksi>();
+        in.readList(this.transaksi, Transaksi.class.getClassLoader());
+        this.ratings = in.createTypedArrayList(Rating.CREATOR);
+    }
+
+    public static final Creator<RumahRetret> CREATOR = new Creator<RumahRetret>() {
+        @Override
+        public RumahRetret createFromParcel(Parcel source) {
+            return new RumahRetret(source);
+        }
+
+        @Override
+        public RumahRetret[] newArray(int size) {
+            return new RumahRetret[size];
+        }
+    };
 }

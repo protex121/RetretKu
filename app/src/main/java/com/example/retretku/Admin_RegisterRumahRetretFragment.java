@@ -26,7 +26,7 @@ import es.dmoral.toasty.Toasty;
 
 public class Admin_RegisterRumahRetretFragment extends Fragment {
 
-    TextView txtemail,txtnama,txtpassword,txtalamat;
+    TextView txtemail,txtnama,txtpassword,txtalamat, txtnotelp;
     Button btnsubmit,btnsearch;
     private FirebaseAuth mAuth;
     private ProgressDialog pDialog;
@@ -39,6 +39,7 @@ public class Admin_RegisterRumahRetretFragment extends Fragment {
         txtnama = v.findViewById(R.id.txtnama);
         txtpassword = v.findViewById(R.id.txtpassword);
         txtalamat = v.findViewById(R.id.txtalamat);
+        txtnotelp = v.findViewById(R.id.tNotelp_AdminRegisterRumahRetret);
         btnsubmit = v.findViewById(R.id.btnsubmit);
         btnsearch = v.findViewById(R.id.button);
 
@@ -52,6 +53,7 @@ public class Admin_RegisterRumahRetretFragment extends Fragment {
                 final String nama = txtnama.getText().toString();
                 final String pass = txtpassword.getText().toString();
                 final String alamat = txtalamat.getText().toString();
+                final String notelp = txtnotelp.getText().toString();
 
                 pDialog = new ProgressDialog(getContext());
                 pDialog.setMessage("Memuat");
@@ -62,7 +64,7 @@ public class Admin_RegisterRumahRetretFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             String id = task.getResult().getUser().getUid();
-                            RumahRetret r = new RumahRetret(id,nama,email,pass,alamat,0,0);
+                            RumahRetret r = new RumahRetret(id,nama,email,pass,alamat,notelp,0,0);
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference myRef = database.getReference("RumahRetret").child(r.getRumah_id());
@@ -72,7 +74,7 @@ public class Admin_RegisterRumahRetretFragment extends Fragment {
                             Toasty.success(getContext(), "Berhasil Mendaftarkan rumah retret", Toast.LENGTH_SHORT).show();
                         }
                         else{
-
+                            Toasty.error(getContext(),"Gagal mendaftarkan rumah retret",Toasty.LENGTH_SHORT).show();
                         }
                     }
                 });

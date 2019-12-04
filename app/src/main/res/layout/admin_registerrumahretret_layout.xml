@@ -81,8 +81,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Sumbit"
+        android:text="Submit"
         app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtalamat"
+        app:layout_constraintTop_toBottomOf="@+id/tNotelp_AdminRegisterRumahRetret" />
+
+    <EditText
+        android:id="@+id/tNotelp_AdminRegisterRumahRetret"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Nomor Telpon"
+        android:inputType="text|phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtalamat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,17 +49,17 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ActivityPengelola">
-
-        </activity>
-        <activity android:name=".ActivityEditProfilePengelola"></activity>
-        <activity android:name=".DetailTransaksi"></activity>
-        <activity android:name=".GallerySewaan"></activity>
-        <activity android:name=".SplashScreen.SplahScreen" android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ActivityEditProfilePengelola"></activity>
+        <activity android:name=".DetailTransaksi"></activity>
+        <activity android:name=".GallerySewaan"></activity>
+        <activity android:name=".SplashScreen.SplahScreen" android:theme="@style/SplashScreen">
+
         </activity>
     </application>
 
