@@ -2,6 +2,7 @@ package com.example.retretku;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.retretku.Objects.Transaksi;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class rvHTrans extends RecyclerView.Adapter<rvHTrans.HTransViewHolder> {
@@ -37,12 +37,9 @@ public class rvHTrans extends RecyclerView.Adapter<rvHTrans.HTransViewHolder> {
     public void onBindViewHolder(@NonNull HTransViewHolder holder, int position) {
         holder.idTrans.setText(htrans.get(position).getId_trans());
 
-        SimpleDateFormat simpleDate =  new SimpleDateFormat("dd MMM yyyy");
-        String strDt = simpleDate.format(htrans.get(position).getCin());
-        holder.cin.setText(strDt);
+        holder.cin.setText(DateFormat.format("dd MMM yyyy", htrans.get(position).getCin()).toString());
 
-        strDt = simpleDate.format(htrans.get(position).getCout());
-        holder.cout.setText(strDt);
+        holder.cout.setText(DateFormat.format("dd MMM yyyy", htrans.get(position).getCout()).toString());
 
         String tempTextHolder = "Rp. " + htrans.get(position).getTotal() + ",-";
         holder.total.setText(tempTextHolder);
@@ -76,15 +73,15 @@ public class rvHTrans extends RecyclerView.Adapter<rvHTrans.HTransViewHolder> {
             super(itemView);
 
             idTrans = itemView.findViewById(R.id.tIdTransaksi_LHT);
-            cin = itemView.findViewById(R.id.textTanggalCheckIn_LHT);
-            cout = itemView.findViewById(R.id.textTanggalCheckOut_LHT);
+            cin = itemView.findViewById(R.id.tTanggalCheckIn_LHT);
+            cout = itemView.findViewById(R.id.tTanggalCheckOut_LHT);
             status = itemView.findViewById(R.id.tStatus_LHT);
             total = itemView.findViewById(R.id.tTotal_LHT);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onHTransClickListener.onClick(itemView,getAdapterPosition());
+                onHTransClickListener.onClick(itemView,getAdapterPosition());
                 }
             });
         }
