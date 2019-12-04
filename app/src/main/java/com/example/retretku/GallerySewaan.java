@@ -1,29 +1,33 @@
 package com.example.retretku;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-
 import com.example.retretku.Objects.RumahRetret;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.util.ArrayList;
 
 public class GallerySewaan extends AppCompatActivity {
     static int PICK_IMAGE_FROM_GALLERY = 1;
     Button addPic;
     RecyclerView rv;
     RumahRetret rr;
+    FirebaseAuth mAuth;
+    ArrayList<Uri> list_uri = new ArrayList<Uri>();
+    rvGallerySewaanAdapter tmp;
+    private StorageReference mStorageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +38,14 @@ public class GallerySewaan extends AppCompatActivity {
         addPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), PICK_IMAGE_FROM_GALLERY);
+                Intent i = new Intent();
+                i.setType("image/*");
+                i.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(i,"pilih gambar"),1);
             }
         });
+
+        mAuth = FirebaseAuth.getInstance();
 
         rv = findViewById(R.id.rvGallery_GallerySewaan);
         rv.setLayoutManager(new GridLayoutManager(this,2));
@@ -45,7 +54,8 @@ public class GallerySewaan extends AppCompatActivity {
         rr.getImages().add(R.drawable.cateone);
         rr.getImages().add(R.drawable.catetwo);
         rr.getImages().add(R.drawable.catethree);
-        rv.setAdapter(new rvGallerySewaanAdapter(rr));
+        tmp = new rvGallerySewaanAdapter(rr);
+        rv.setAdapter(tmp);
     }
 
     @Override
@@ -53,19 +63,24 @@ public class GallerySewaan extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         //Detects request codes
-        if(requestCode == PICK_IMAGE_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
+        if(requestCode == 1 && resultCode == RESULT_OK){
             Uri selectedImage = data.getData();
-            Bitmap bitmap = null;
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
-            } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            //iv_gambar.setImageURI(selectedImage);
+            upload(selectedImage);
         }
+    }
+
+    //method untuk upload gambar
+    public void upload(final Uri selectedImage){
+        final Uri file  = selectedImage;
+        StorageReference ref = mStorageRef.child("images/"+mAuth.getCurrentUser().getUid()+list_uri.size()+".jpg");
+        ref.putFile(file).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                list_uri.add(file);
+                tmp.notifyDataSetChanged();
+            }
+        });
     }
 
     public void goToActivityPengelola(View view) {
