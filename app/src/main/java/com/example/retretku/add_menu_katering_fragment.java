@@ -1,5 +1,6 @@
 package com.example.retretku;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,7 +18,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 
@@ -105,23 +108,25 @@ public class add_menu_katering_fragment extends Fragment {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
+        startActivityForResult(Intent.createChooser(intent,"Pilih Gambar"),1);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+        if(requestCode==1 && resultCode== Activity.RESULT_OK && data!=null && data.getData()!=null){
             imgUri = data.getData();
             imgView.setImageURI(imgUri);
         }
     }
 
     private void Fileuploader(){
-
-    }
-
-    private String getExttension(Uri uri){
-        ContentResolver cr = getContentResolver;
+        StorageReference ref = imgStore.child("images/"+mAuth.getCurrentUser().getUid()+".jpg");
+        ref.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                imgView.setImageURI(imgUri);
+            }
+        })
     }
 }
