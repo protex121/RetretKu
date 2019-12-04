@@ -13,10 +13,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
 
-public class login extends AppCompatActivity {
+public class  login extends AppCompatActivity {
 
     EditText txtemail,password;
+    DatabaseReference dbReff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

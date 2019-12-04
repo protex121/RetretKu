@@ -1,0 +1,80 @@
+{
+  "project_info": {
+    "project_number": "632058992134",
+    "firebase_url": "https://retretku.firebaseio.com",
+    "project_id": "retretku",
+    "storage_bucket": "retretku.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632058992134:android:10a4cca86ac455da81d587",
+        "android_client_info": {
+          "package_name": "com.example.retretku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632058992134-a9k6tm6nssisoaolo9es9jatdf2al7na.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.retretku",
+            "certificate_hash": "9c719959b6162ec942852f07ff75976770f14357"
+          }
+        },
+        {
+          "client_id": "632058992134-a82ltvrcvibfhbbej0bulrsjik27iab6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.retretku",
+            "certificate_hash": "f8903c3d3a911dae1dc0eede503ee66a3043bd0f"
+          }
+        },
+        {
+          "client_id": "632058992134-4vghdm6hcic34pnehbnokhrr71jalhe3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.retretku",
+            "certificate_hash": "927327a3ade5f88078619252087b2606ba1a640b"
+          }
+        },
+        {
+          "client_id": "632058992134-h0fia739uqker5iliqpp9jua3uphrvoc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.retretku",
+            "certificate_hash": "ca0e82bbd8bc816ce8f1cfb187dae1c72b90e0cf"
+          }
+        },
+        {
+          "client_id": "632058992134-8bljla771mbhg36jktdije8lmm1g3iv0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.retretku",
+            "certificate_hash": "7b85aeae02ad58ecc9901aa1ae6c503133c36a3d"
+          }
+        },
+        {
+          "client_id": "632058992134-iqrrujhn8edm1vkpc2l8efm98vttqu9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv_UuhFeeSmjfFd7UlJyaXNRi2TorUJJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632058992134-iqrrujhn8edm1vkpc2l8efm98vttqu9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
