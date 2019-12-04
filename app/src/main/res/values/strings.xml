@@ -6,10 +6,22 @@ Fusce non risus id eros semper semper. Donec blandit metus ut nisi tincidunt con
 Vivamus quis ex vulputate, consequat neque non, vestibulum ex. Duis dictum, tortor eu venenatis rhoncus, dolor odio scelerisque sapien, vitae bibendum tellus eros nec justo. Vivamus tincidunt leo nec aliquet mattis. Suspendisse aliquam quam tortor, vitae dictum felis semper quis. Maecenas eu metus metus. In placerat est enim, ac mattis felis ultricies eu. Nunc vulputate, mauris a posuere rhoncus, lorem nisi vulputate risus, et condimentum dui dolor vitae augue.
 Mauris ac dapibus nibh. Vestibulum sagittis metus vel dictum suscipit. Vestibulum interdum felis ac dui tincidunt ultricies. Nulla lectus dui, viverra at bibendum sed, suscipit ut massa. Sed ac nulla sed nisl mattis elementum. Curabitur tempor, tortor at rhoncus rhoncus, nibh tellus interdum lorem, ut facilisis lacus metus ut ante. Maecenas faucibus ac ligula et molestie. Fusce egestas non libero nec finibus. Maecenas eu ullamcorper ante. Sed nisl turpis, ultrices dignissim tortor quis, sodales molestie dolor. Nulla sed tempor tortor. Sed turpis ante, dignissim sed pharetra non, molestie vestibulum nibh. Curabitur neque neque, egestas quis enim nec, faucibus elementum nibh. Suspendisse egestas mi lectus, sed mattis mi pellentesque nec. Quisque imperdiet lorem quis congue sollicitudin.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="latest_rating_ProfilePengelola">Rating Paling Baru</string>
-    <string name="avg_rating_ProfilePengelola">Rata-Rata Rating Anda</string>
-    <string name="change_profile_ProfilePengelola">Ubah Profile</string>
-    <string name="listing_SewaanPengelola">Sewaan Anda</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_maps">Map</string>
+
+
 </resources>

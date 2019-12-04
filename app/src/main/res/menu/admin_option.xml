@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemUser"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="Master User" />
+    <item
+        android:id="@+id/itemRumahRetret"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Master Rumah Retret" />
+    <item
+        android:id="@+id/itemKatering"
+        android:icon="@drawable/spoon_fork"
+        android:title="Master Katering" />
+    <item
+        android:id="@+id/itemContact"
+        android:icon="@drawable/ic_perm_contact_calendar_black_24dp"
+        android:title="Contact" />
+    <item
+        android:id="@+id/itemReport"
+        android:icon="@drawable/ic_report_problem_black_24dp"
+        android:title="Report" />
+</menu>

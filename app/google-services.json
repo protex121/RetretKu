@@ -15,22 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "632058992134-4vghdm6hcic34pnehbnokhrr71jalhe3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.retretku",
-            "certificate_hash": "927327a3ade5f88078619252087b2606ba1a640b"
-          }
-        },
-        {
-          "client_id": "632058992134-h0fia739uqker5iliqpp9jua3uphrvoc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.retretku",
-            "certificate_hash": "ca0e82bbd8bc816ce8f1cfb187dae1c72b90e0cf"
-          }
-        },
-        {
           "client_id": "632058992134-8bljla771mbhg36jktdije8lmm1g3iv0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -45,7 +29,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAv_UuhFeeSmjfFd7UlJyaXNRi2TorUJJk"
+          "current_key": "AIzaSyCB2kEGlSZEDXMs1Q1sjpoTuBdEG2IvGbw"
         }
       ],
       "services": {

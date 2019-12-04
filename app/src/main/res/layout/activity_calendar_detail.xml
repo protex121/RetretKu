@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".calendarDetail" >
+    tools:context=".ActivityCalendarDetail" >
 
     <CalendarView
         android:id="@+id/calendar_ca"
@@ -30,8 +30,6 @@
             android:id="@+id/ivInfo_cd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
-            android:backgroundTintMode="multiply"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/cateone" />
     </LinearLayout>
