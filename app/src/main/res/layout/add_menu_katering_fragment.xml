@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="91dp"
         android:layout_marginEnd="49dp"
         android:text="Jenis Menu"
         android:textAlignment="center"
@@ -49,6 +49,21 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfeed12" />
+
+    <TextView
+        android:id="@+id/txtfeed12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="158dp"
+        android:text="Gambar Menu"
+        android:textAlignment="center"
+        android:textColor="#3E4993"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtfeed5" />
 
@@ -93,7 +108,7 @@
         android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="154dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_deskripsi">
@@ -110,5 +125,17 @@
             android:layout_height="wrap_content"
             android:text="Snack" />
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="92dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="152dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtfeed12"
+        app:layout_constraintTop_toBottomOf="@+id/text_deskripsi"
+        app:srcCompat="@mipmap/ic_retretku" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

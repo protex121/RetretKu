@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ public class add_menu_katering_fragment extends Fragment {
     Button btn_add;
     EditText txt_nama,txt_deskripsi;
     RadioButton rb_makanan;
+    ImageView imgView;
+    StorageReference
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
     ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
     ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
@@ -42,6 +45,7 @@ public class add_menu_katering_fragment extends Fragment {
         btn_add = view.findViewById(R.id.btn_add);
         txt_nama = view.findViewById(R.id.txt_nama);
         txt_deskripsi = view.findViewById(R.id.text_deskripsi);
+        imgView = view.findViewById(R.id.imageView12);
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
