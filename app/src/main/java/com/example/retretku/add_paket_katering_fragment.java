@@ -53,7 +53,6 @@ public class add_paket_katering_fragment extends Fragment {
         radioButton2 = view.findViewById(R.id.radioButton3);
         radioButton1 = view.findViewById(R.id.radioButton2);
 
-
         tmp_menu.clear();
 
         for(int i=0;i<list_katering.get(0).getList_menu().size();i++){

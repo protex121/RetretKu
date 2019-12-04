@@ -13,8 +13,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -26,7 +29,8 @@ public class katering extends AppCompatActivity {
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
     ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
     ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
-    DatabaseReference dbReff;
+    DatabaseReference dbReff,dbRef, dRef;
+    FirebaseDatabase mDat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,58 @@ public class katering extends AppCompatActivity {
 
         ImgSideMenu = findViewById(R.id.imgsidemenu2);
         bnv = findViewById(R.id.bottomNavigationView);
+        mDat = FirebaseDatabase.getInstance();
+        dbRef = FirebaseDatabase.getInstance().getReference().child("paket_makanan");
+        dRef = FirebaseDatabase.getInstance().getReference().child("menu");
         dbReff = FirebaseDatabase.getInstance().getReference().child("katering");
+
+        dbReff.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list_katering.clear();
+                for(DataSnapshot tmp: dataSnapshot.getChildren()){
+                    katering_class rmh = tmp.getValue(katering_class.class);
+                    list_katering.add(rmh);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list_paket_makanan.clear();
+                for(DataSnapshot tmp: dataSnapshot.getChildren()){
+                    paket_class rmh = tmp.getValue(paket_class.class);
+                    list_paket_makanan.add(rmh);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        dRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list_menu.clear();
+                for(DataSnapshot tmp: dataSnapshot.getChildren()){
+                    menu_class rmh = tmp.getValue(menu_class.class);
+                    list_menu.add(rmh);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         ImgSideMenu.setOnClickListener(new View.OnClickListener() {
             @Override
