@@ -20,6 +20,9 @@ public class add_menu_katering_fragment extends Fragment {
     EditText txt_nama,txt_deskripsi;
     RadioButton rb_makanan;
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
+    ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
+    ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
+    ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
 
     @Nullable
     @Override
@@ -32,6 +35,9 @@ public class add_menu_katering_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         list_katering = ((katering)getActivity()).list_katering;
+        list_paket_makanan = ((katering)getActivity()).list_paket_makanan;
+        list_paket_snack = ((katering)getActivity()).list_paket_snack;
+        list_menu = ((katering)getActivity()).list_menu;
         rb_makanan = view.findViewById(R.id.rb_makanan);
         btn_add = view.findViewById(R.id.btn_add);
         txt_nama = view.findViewById(R.id.txt_nama);
@@ -54,11 +60,12 @@ public class add_menu_katering_fragment extends Fragment {
                 }
 
                 if(!tmp_nama.equals("") && !tmp_deskripsi.equals("")){
-                    list_katering.get(0).add_menu(new menu_class(tmp_nama,tmp,tmp_deskripsi));
+                    list_menu.add(new menu_class(list_menu.size()+1+"",tmp_nama,tmp,tmp_deskripsi));
+                    list_katering.get(0).add_menu(list_menu.size()+"");
                     Toast.makeText(view.getContext(), "Menu Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
 
 
-                    ((katering)getActivity()).update(list_katering);
+                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_paket_snack,list_menu);
                 }
             }
         });

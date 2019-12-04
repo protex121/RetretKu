@@ -52,9 +52,23 @@
         android:id="@+id/txtfeed10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="157dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="156dp"
         android:text="Daftar Menu"
+        android:textAlignment="center"
+        android:textColor="#3E4993"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfeed8" />
+
+    <TextView
+        android:id="@+id/txtfeed11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="101dp"
+        android:text="Tipe Paket"
         android:textAlignment="center"
         android:textColor="#3E4993"
         android:textSize="18sp"
@@ -92,8 +106,8 @@
 
     <EditText
         android:id="@+id/txt_deskripsi"
-        android:layout_width="213dp"
-        android:layout_height="150dp"
+        android:layout_width="209dp"
+        android:layout_height="118dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="19dp"
@@ -122,11 +136,12 @@
         android:layout_width="213dp"
         android:layout_height="54dp"
         android:layout_marginStart="61dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="19dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txtfeed10"
-        app:layout_constraintTop_toBottomOf="@+id/txt_deskripsi" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Button
         android:id="@+id/btn_add_menu"
@@ -152,5 +167,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_add_menu" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/txtfeed11"
+        app:layout_constraintTop_toBottomOf="@+id/txt_deskripsi">
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Snack" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Makanan" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

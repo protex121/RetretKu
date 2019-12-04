@@ -25,6 +25,9 @@ public class katering extends AppCompatActivity {
     ImageView ImgSideMenu;
 
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
+    ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
+    ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
+    ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,11 @@ public class katering extends AppCompatActivity {
         openFragment(fr);
     }
 
-    public void update(ArrayList<katering_class> a){
+    public void update(ArrayList<katering_class> a, ArrayList<paket_class> b, ArrayList<paket_class> d, ArrayList<menu_class> c){
         list_katering = a;
+        list_paket_makanan = b;
+        list_menu = c;
+        list_paket_snack = d;
     }
 
     public void openFragment(Fragment frag){

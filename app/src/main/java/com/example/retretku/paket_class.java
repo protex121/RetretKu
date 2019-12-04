@@ -3,19 +3,29 @@ package com.example.retretku;
 import java.util.ArrayList;
 
 public class paket_class {
-    private ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
+    private String id;
+    private ArrayList<String> list_menu = new ArrayList<String>();
     private String nama;
     private int harga;
     private String deskripsi;
 
-    public void add_menu(menu_class a){
+    public void add_menu(String a){
         list_menu.add(a);
     }
 
-    public paket_class(int harga, String nama,String deskripsi) {
+    public paket_class(String id,int harga, String nama,String deskripsi) {
+        this.id = id;
         this.harga = harga;
         this.nama = nama;
         this.deskripsi = deskripsi;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDeskripsi() {
@@ -42,7 +52,7 @@ public class paket_class {
         this.harga = harga;
     }
 
-    public ArrayList<menu_class> getList_menu() {
+    public ArrayList<String> getList_menu() {
         return list_menu;
     }
 

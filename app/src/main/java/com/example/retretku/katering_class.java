@@ -3,9 +3,9 @@ package com.example.retretku;
 import java.util.ArrayList;
 
 public class katering_class {
-    private ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
-    private ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
-    private ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
+    private ArrayList<String> list_paket_makanan = new ArrayList<String>();
+    private ArrayList<String> list_paket_snack = new ArrayList<String>();
+    private ArrayList<String> list_menu = new ArrayList<String>();
     private String email;
     private String password;
     private String nama_katering;
@@ -22,27 +22,27 @@ public class katering_class {
         this.stat = 0;
     }
 
-    public ArrayList<menu_class> getList_menu() {
+    public ArrayList<String> getList_menu() {
         return list_menu;
     }
 
-    public void add_menu(menu_class a) {
+    public void add_menu(String a) {
         this.list_menu.add(a);
     }
 
-    public ArrayList<paket_class> getList_paket_snack() {
+    public ArrayList<String> getList_paket_snack() {
         return list_paket_snack;
     }
 
-    public void add_paket_snack(paket_class a) {
+    public void add_paket_snack(String a) {
         this.list_paket_snack.add(a);
     }
 
-    public ArrayList<paket_class> getList_paket_makanan() {
+    public ArrayList<String> getList_paket_makanan() {
         return list_paket_makanan;
     }
 
-    public void add_paket_makanan(paket_class a) {
+    public void add_paket_makanan(String a) {
         this.list_paket_makanan.add(a);
     }
 

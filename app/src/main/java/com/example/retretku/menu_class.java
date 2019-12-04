@@ -1,14 +1,24 @@
 package com.example.retretku;
 
 public class menu_class {
+    private String id;
     private String nama;
     private String deskripsi;
     private int tipe;
 
-    public menu_class(String nama, int tipe, String deskiripsi) {
+    public menu_class(String id,String nama, int tipe, String deskiripsi) {
+        this.id = id;
         this.nama = nama;
         this.tipe = tipe;
         this.deskripsi = deskiripsi;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDeskripsi() {
