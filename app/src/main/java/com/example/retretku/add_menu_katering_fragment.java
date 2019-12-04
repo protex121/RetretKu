@@ -37,7 +37,6 @@ public class add_menu_katering_fragment extends Fragment {
 
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
     ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
-    ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
     ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
 
     @Nullable
@@ -52,7 +51,6 @@ public class add_menu_katering_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         list_katering = ((katering)getActivity()).list_katering;
         list_paket_makanan = ((katering)getActivity()).list_paket_makanan;
-        list_paket_snack = ((katering)getActivity()).list_paket_snack;
         list_menu = ((katering)getActivity()).list_menu;
         rb_makanan = view.findViewById(R.id.rb_makanan);
         btn_add = view.findViewById(R.id.btn_add);
@@ -102,7 +100,7 @@ public class add_menu_katering_fragment extends Fragment {
                     Toast.makeText(view.getContext(), "Menu Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
 
 
-                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_paket_snack,list_menu);
+                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_menu);
 
                     Fileuploader();
                 }

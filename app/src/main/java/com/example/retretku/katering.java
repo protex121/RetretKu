@@ -1,24 +1,21 @@
 package com.example.retretku;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class katering extends AppCompatActivity {
@@ -28,7 +25,6 @@ public class katering extends AppCompatActivity {
 
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
     ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
-    ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
     ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
     DatabaseReference dbReff;
 
@@ -56,11 +52,10 @@ public class katering extends AppCompatActivity {
         openFragment(fr);
     }
 
-    public void update(ArrayList<katering_class> a, ArrayList<paket_class> b, ArrayList<paket_class> d, ArrayList<menu_class> c){
+    public void update(ArrayList<katering_class> a, ArrayList<paket_class> b, ArrayList<menu_class> c){
         list_katering = a;
         list_paket_makanan = b;
         list_menu = c;
-        list_paket_snack = d;
 
         dbReff = FirebaseDatabase.getInstance().getReference().child("katering");
         for(int i=0;i<list_katering.size();i++){
@@ -75,11 +70,6 @@ public class katering extends AppCompatActivity {
         dbReff = FirebaseDatabase.getInstance().getReference().child("paket_makanan");
         for(int i=0;i<list_paket_makanan.size();i++){
             dbReff.child(list_paket_makanan.get(i).getId()).setValue(list_paket_makanan.get(i));
-        }
-
-        dbReff = FirebaseDatabase.getInstance().getReference().child("paket_snack");
-        for(int i=0;i<list_paket_snack.size();i++){
-            dbReff.child(list_paket_snack.get(i).getId()).setValue(list_paket_snack.get(i));
         }
     }
 

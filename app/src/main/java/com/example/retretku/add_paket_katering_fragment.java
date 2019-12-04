@@ -1,7 +1,6 @@
 package com.example.retretku;
 
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ public class add_paket_katering_fragment extends Fragment {
     Button btn_add_paket,btn_add_menu;
     ArrayList<katering_class> list_katering = new ArrayList<katering_class>();
     ArrayList<paket_class> list_paket_makanan = new ArrayList<paket_class>();
-    ArrayList<paket_class> list_paket_snack = new ArrayList<paket_class>();
     ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
     ArrayList<menu_class> list_paket = new ArrayList<menu_class>();
     ArrayList<menu_class> tmp_menu = new ArrayList<menu_class>();
@@ -46,7 +44,6 @@ public class add_paket_katering_fragment extends Fragment {
         lv = view.findViewById(R.id.lv_menu);
         list_katering = ((katering)getActivity()).list_katering;
         list_paket_makanan = ((katering)getActivity()).list_paket_makanan;
-        list_paket_snack = ((katering)getActivity()).list_paket_snack;
         list_menu = ((katering)getActivity()).list_menu;
         btn_add_paket = view.findViewById(R.id.btn_add_paket);
         txt_nama = view.findViewById(R.id.txt_nama);
@@ -84,29 +81,6 @@ public class add_paket_katering_fragment extends Fragment {
                 tmp_harga = Integer.parseInt(txt_harga.getText().toString());
                 if(!tmp_nama.equals("") && !tmp_deskripsi.equals("") && tmp_harga>-1 && radioButton1.isChecked()){
                     int tmp_jml = list_paket_makanan.size()+1;
-                    String tmp_id="PMA";
-                    if(tmp_jml<10){
-                        tmp_id+="00"+tmp_jml;
-                    }
-                    else if(tmp_jml<100){
-                        tmp_id+="0"+tmp_jml;
-                    }
-                    else{
-                        tmp_id+=tmp_jml;
-                    }
-                    list_paket_makanan.add(new paket_class(tmp_id,tmp_harga,tmp_nama,tmp_deskripsi));
-                    list_katering.get(0).add_paket_makanan(tmp_id);
-
-                    for(int i=0;i<list_paket.size();i++){
-                        list_paket_makanan.get(list_paket_makanan.size()-1).add_menu(list_paket.get(i).getId());
-                    }
-
-                    Toast.makeText(view.getContext(), "Paket Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
-
-                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_paket_snack,list_menu);
-                }
-                else if(!tmp_nama.equals("") && !tmp_deskripsi.equals("") && tmp_harga>-1 && radioButton2.isChecked()){
-                    int tmp_jml = list_paket_snack.size()+1;
                     String tmp_id="PSN";
                     if(tmp_jml<10){
                         tmp_id+="00"+tmp_jml;
@@ -117,16 +91,39 @@ public class add_paket_katering_fragment extends Fragment {
                     else{
                         tmp_id+=tmp_jml;
                     }
-                    list_paket_snack.add(new paket_class(tmp_id,tmp_harga,tmp_nama,tmp_deskripsi));
-                    list_katering.get(0).add_paket_snack(tmp_id);
+                    list_paket_makanan.add(new paket_class(tmp_id,tmp_harga,tmp_nama,tmp_deskripsi,0));
+                    list_katering.get(0).add_paket_makanan(tmp_id);
 
                     for(int i=0;i<list_paket.size();i++){
-                        list_paket_snack.get(list_paket_snack.size()-1).add_menu(list_paket.get(i).getId());
+                        list_paket_makanan.get(list_paket_makanan.size()-1).add_menu(list_paket.get(i).getId());
                     }
 
                     Toast.makeText(view.getContext(), "Paket Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
 
-                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_paket_snack,list_menu);
+                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_menu);
+                }
+                else if(!tmp_nama.equals("") && !tmp_deskripsi.equals("") && tmp_harga>-1 && radioButton2.isChecked()){
+                    int tmp_jml = list_paket_makanan.size()+1;
+                    String tmp_id="PSN";
+                    if(tmp_jml<10){
+                        tmp_id+="00"+tmp_jml;
+                    }
+                    else if(tmp_jml<100){
+                        tmp_id+="0"+tmp_jml;
+                    }
+                    else{
+                        tmp_id+=tmp_jml;
+                    }
+                    list_paket_makanan.add(new paket_class(tmp_id,tmp_harga,tmp_nama,tmp_deskripsi,1));
+                    list_katering.get(0).add_paket_snack(tmp_id);
+
+                    for(int i=0;i<list_paket.size();i++){
+                        list_paket_makanan.get(list_paket_makanan.size()-1).add_menu(list_paket.get(i).getId());
+                    }
+
+                    Toast.makeText(view.getContext(), "Paket Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
+
+                    ((katering)getActivity()).update(list_katering,list_paket_makanan,list_menu);
                 }
             }
         });
