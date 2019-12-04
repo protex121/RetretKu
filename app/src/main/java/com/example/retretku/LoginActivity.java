@@ -57,8 +57,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
 
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    String id = task.getResult().getUser().getUid(); //ini artinya aku ngambil ID user yang sedang login, kembaliannya adalah ID yang gabisa dibaca itu
+                    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    final String id = task.getResult().getUser().getUid(); //ini artinya aku ngambil ID user yang sedang login, kembaliannya adalah ID yang gabisa dibaca itu
                     DatabaseReference myRef = database.getReference("Users").child(id); //ini artinya aku ngambil dari Database yang ke user trus berdasarkan ID user uang sedang login
 
                     //dari sini aku misalkan ya aku asumsikan sudah pesen tempat e trus tak ambil historynya dari database berdasarkan id
@@ -73,28 +73,12 @@ public class LoginActivity extends AppCompatActivity {
                     //myRefdummy.push().setValue(r);
                     //sampai dibawah sini harusnya kalian mengerti
 
-
-
-
-
                     myRef.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            User u = (User)dataSnapshot.getValue(User.class);
-                            //punya juli
-                            if(u.getEmail_user().equals("admin@gmail.com") && u.getPassword_user().equals("admin")){
-                                pDialog.dismiss();
-                                Intent i = new Intent(getApplicationContext(),DashboardActivity.class);
-                                startActivity(i);
-                                Toasty.info(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
-                            }
-                            else if(u.getEmail_user().equals("pengelola@gmail.com") && u.getPassword_user().equals("qweqwe")){
-                                pDialog.dismiss();
-                                Intent i = new Intent(getApplicationContext(),ActivityPengelola.class);
-                                startActivity(i);
-                                Toasty.info(getApplicationContext(),"PENGELOLA",Toast.LENGTH_SHORT).show();
-                            }
-                            else{
+                            User u = dataSnapshot.getValue(User.class);
+                            if(u.getStatus() == 0){
+                                //0 itu user
                                 FirebaseUser user = mAuth.getCurrentUser();
 
                                 pDialog.dismiss();
@@ -102,24 +86,12 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(i);
                                 Toasty.success(getApplicationContext(),"Berhasil Login",Toast.LENGTH_SHORT).show();
                             }
+                            else if(u.getStatus() == 1){
+                                //1 itu admin
+                                pDialog.dismiss();
+                                Toasty.info(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
+                            }
 
-                            //punya sion
-//                            if(u.getStatus() == 0){
-//                                //0 itu user
-//                                FirebaseUser user = mAuth.getCurrentUser();
-//
-//                                pDialog.dismiss();
-//                                Intent i = new Intent(getApplicationContext(), HomeActivity.class);
-//                                startActivity(i);
-//                                Toasty.success(getApplicationContext(),"Berhasil Login",Toast.LENGTH_SHORT).show();
-//                            }
-//                            else if(u.getStatus() == 1){
-//                                //1 itu admin
-//                                pDialog.dismiss();
-//                                Intent i = new Intent(getApplicationContext(),DashboardActivity.class);
-//                                startActivity(i);
-//                                Toasty.info(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
-//                            }
                         }
 
                         @Override
@@ -128,7 +100,23 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
 
+                    DatabaseReference dr = database.getReference("RumahRetret").child(id);
+                    dr.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            FirebaseUser user = mAuth.getCurrentUser();
 
+                            pDialog.dismiss();
+                            Intent i = new Intent(getApplicationContext(), ActivityPengelola.class);
+                            startActivity(i);
+                            Toasty.success(getApplicationContext(),"Berhasil Login",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
                 }
                 else{
                     Toasty.error(LoginActivity.this, "Email/Password Anda salah!", Toast.LENGTH_SHORT).show();
@@ -149,27 +137,25 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUser.getUid()).child("status");
-            myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.getValue(Integer.class) == 0){
-                        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(i);
-                    }
-                    else{
-                        Toast.makeText(LoginActivity.this, "admin", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-        }
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUser.getUid()).child("status");
+//            myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    if(dataSnapshot.getValue(Integer.class) == 0){
+//                        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+//                        startActivity(i);
+//                    }
+//                    else{
+//                        Toast.makeText(LoginActivity.this, "admin", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
+//        }
     }
-
-
 }
