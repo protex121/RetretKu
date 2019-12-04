@@ -8,16 +8,26 @@ public class paket_class {
     private String nama;
     private int harga;
     private String deskripsi;
+    private int jenis;
 
     public void add_menu(String a){
         list_menu.add(a);
     }
 
-    public paket_class(String id,int harga, String nama,String deskripsi) {
+    public paket_class(String id,int harga, String nama,String deskripsi,int jenis) {
         this.id = id;
         this.harga = harga;
         this.nama = nama;
         this.deskripsi = deskripsi;
+        this.jenis = jenis;
+    }
+
+    public int getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(int jenis) {
+        this.jenis = jenis;
     }
 
     public String getId() {

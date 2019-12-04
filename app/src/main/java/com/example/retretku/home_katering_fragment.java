@@ -12,6 +12,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,9 @@ public class home_katering_fragment extends Fragment {
     private ArrayList<menu_class> list_menu = new ArrayList<menu_class>();
     ArrayList<menu_class> tmp_menu = new ArrayList<menu_class>();
 
-    ListView lv_menu;
+    RecyclerView lv_menu;
+
+    RecyclerView lv_order;
 
     @Nullable
     @Override
@@ -52,6 +55,6 @@ public class home_katering_fragment extends Fragment {
 
         ArrayAdapter adapt = new ArrayAdapter(view.getContext(),android.R.layout.simple_list_item_1,tmp_menu);
 
-        lv_menu.setAdapter(adapt);
+        //lv_menu.setAdapter(adapt);
     }
 }
