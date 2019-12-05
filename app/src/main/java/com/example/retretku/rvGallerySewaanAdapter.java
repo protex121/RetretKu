@@ -8,7 +8,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.retretku.Objects.RumahRetret;
+import com.example.retretku.Object.RumahRetret;
+
 
 public class rvGallerySewaanAdapter extends RecyclerView.Adapter<rvGallerySewaanAdapter.rvGalleryViewholder> {
     RumahRetret rr;
@@ -26,7 +27,7 @@ public class rvGallerySewaanAdapter extends RecyclerView.Adapter<rvGallerySewaan
 
     @Override
     public void onBindViewHolder(@NonNull rvGalleryViewholder holder, int position) {
-        holder.iv.setImageResource(rr.getImages().get(position));
+        holder.iv.setImageURI(rr.getImages().get(position));
     }
 
     @Override

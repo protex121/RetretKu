@@ -1,5 +1,6 @@
 package com.example.retretku.Object;
 
+import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -18,7 +19,7 @@ public class RumahRetret implements Parcelable {
     private double longitude,latitude;
 
     //Gallery
-    ArrayList<Integer> images;
+    ArrayList<Uri> images;
 
     //Foreign Key
     ArrayList<Transaksi> transaksi;
@@ -61,11 +62,11 @@ public class RumahRetret implements Parcelable {
         this.rumah_notelp = rumah_notelp;
     }
 
-    public ArrayList<Integer> getImages() {
+    public ArrayList<Uri> getImages() {
         return images;
     }
 
-    public void setImages(ArrayList<Integer> images) {
+    public void setImages(ArrayList<Uri> images) {
         this.images = images;
     }
 
@@ -215,7 +216,7 @@ public class RumahRetret implements Parcelable {
         this.rumah_deskripsi = in.readString();
         this.longitude = in.readDouble();
         this.latitude = in.readDouble();
-        this.images = new ArrayList<Integer>();
+        this.images = new ArrayList<Uri>();
         in.readList(this.images, Integer.class.getClassLoader());
         this.transaksi = new ArrayList<Transaksi>();
         in.readList(this.transaksi, Transaksi.class.getClassLoader());
