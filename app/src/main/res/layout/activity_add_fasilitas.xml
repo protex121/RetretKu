@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFasilitas">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textFasilitas_AddFasilitas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Fasilitas"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/tNamaFas_AddFasilitas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Nama Fasilitas"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFasilitas_AddFasilitas" />
+
+                <EditText
+                    android:id="@+id/tHargaFas_AddFasilitas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Harga Fasilitas"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tNamaFas_AddFasilitas" />
+
+                <EditText
+                    android:id="@+id/tJmlFas_AddFasilitas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Jumlah Fasilitas"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tHargaFas_AddFasilitas" />
+
+                <EditText
+                    android:id="@+id/tDeskripsiFas_AddFasilitas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Deskripsi Fasilitas"
+                    android:inputType="textPersonName"
+                    android:singleLine="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tJmlFas_AddFasilitas" />
+
+                <Button
+                    android:id="@+id/bAdd_AddFasilitas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:text="Tambah"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tDeskripsiFas_AddFasilitas" />
+
+                <Button
+                    android:id="@+id/bUpdate_AddFasilitas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/quantum_orange"
+                    android:text="Ubah"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/bAdd_AddFasilitas"
+                    app:layout_constraintStart_toEndOf="@+id/bDelete_AddFasilitas"
+                    app:layout_constraintTop_toBottomOf="@+id/tDeskripsiFas_AddFasilitas" />
+
+                <Button
+                    android:id="@+id/bDelete_AddFasilitas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:text="Hapus"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tDeskripsiFas_AddFasilitas" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFasilitas_AddFasilitas"
+                    android:layout_width="0dp"
+                    android:layout_height="286dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bAdd_AddFasilitas" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
