@@ -5,9 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,7 +37,6 @@ public class home_katering_fragment extends Fragment {
         lv_menu = view.findViewById(R.id.rv_menu);
         list_katering = ((katering)getActivity()).list_katering;
         list_paket_makanan = ((katering)getActivity()).list_paket_makanan;
-        list_paket_snack = ((katering)getActivity()).list_paket_snack;
         list_menu = ((katering)getActivity()).list_menu;
 
         tmp_menu.clear();
